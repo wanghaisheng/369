@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <header class="bg-white shadow-sm p-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-bold text-purple-700" data-i18n="home.title">Dashboard</h1>
+                    <div class="flex items-center space-x-3">
+                        <button class="language-button text-purple-600"><i class="fas fa-globe"></i></button>
+                        <button class="text-purple-600"><i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-4 overflow-y-auto">
+                <!-- Greeting Section -->
+                <div class="bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl p-5 text-white mb-6">
+                    <h2 class="text-xl font-bold mb-1" data-i18n="home.greeting">Good Morning!</h2>
+                    <p class="text-sm opacity-90" data-i18n="home.welcomeBack">Welcome back to your manifestation journey.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <div>
+                            <p class="text-xs opacity-80" data-i18n="home.streak">Current Streak</p>
+                            <p class="text-2xl font-bold">15 <span class="text-sm" data-i18n="home.days">days</span></p>
+                        </div>
+                        <button class="bg-white text-purple-700 px-4 py-2 rounded-lg text-sm font-medium" data-i18n="home.todayTasks">Today's Tasks</button>
+                    </div>
+                </div>
+
+                <!-- Current Practice Status -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="home.todayProgress">Today's Progress</h3>
+                        <span class="text-xs text-purple-600" data-i18n="home.april5">April 5, 2023</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-3 mb-4">
+                        <div class="text-center">
+                            <div class="h-16 w-16 mx-auto rounded-full flex items-center justify-center bg-green-100 text-green-600">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <p class="text-xs mt-2 text-gray-600" data-i18n="home.morning">Morning</p>
+                            <p class="text-sm font-medium text-gray-800">3/3</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-16 w-16 mx-auto rounded-full flex items-center justify-center bg-yellow-100 text-yellow-600">
+                                <i class="fas fa-pen text-xl"></i>
+                            </div>
+                            <p class="text-xs mt-2 text-gray-600" data-i18n="home.afternoon">Afternoon</p>
+                            <p class="text-sm font-medium text-gray-800">4/6</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-16 w-16 mx-auto rounded-full flex items-center justify-center bg-gray-100 text-gray-400">
+                                <i class="fas fa-moon text-xl"></i>
+                            </div>
+                            <p class="text-xs mt-2 text-gray-600" data-i18n="home.evening">Evening</p>
+                            <p class="text-sm font-medium text-gray-800">0/9</p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-purple-600 text-white py-2.5 rounded-lg font-medium" data-i18n="home.continueWriting">Continue Writing</button>
+                </div>
+
+                <!-- Your Affirmations -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="home.yourAffirmations">Your Affirmations</h3>
+                        <a href="#" class="text-xs text-purple-600" data-i18n="home.viewAll">View All</a>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full" data-i18n="home.career">Career</span>
+                                <span class="text-xs text-gray-500">24d</span>
+                            </div>
+                            <p class="text-gray-800">"I am attracting abundant opportunities in my career that fulfill my purpose and bring me joy."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-xs text-gray-500" data-i18n="home.completionRate">33% Complete</span>
+                                <div class="flex space-x-2">
+                                    <button class="text-gray-400"><i class="fas fa-edit"></i></button>
+                                    <button class="text-gray-400"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full" data-i18n="home.health">Health</span>
+                                <span class="text-xs text-gray-500">12d</span>
+                            </div>
+                            <p class="text-gray-800">"My body is healthy, strong, and full of energy. I take care of myself with love and respect."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-xs text-gray-500" data-i18n="home.completionRate">67% Complete</span>
+                                <div class="flex space-x-2">
+                                    <button class="text-gray-400"><i class="fas fa-edit"></i></button>
+                                    <button class="text-gray-400"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Community Highlights -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="home.communityHighlights">Community Highlights</h3>
+                        <a href="#" class="text-xs text-purple-600" data-i18n="home.explore">Explore</a>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <div class="flex items-start space-x-3 mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full" alt="User">
+                            <div>
+                                <h4 class="font-medium text-gray-800">Laura Chen</h4>
+                                <p class="text-xs text-gray-500" data-i18n="home.successStory">Success Story</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-800 text-sm">"After 45 days of consistent practice with the 369 method, I finally got my dream job! So grateful for this community's support."</p>
+                        <div class="flex justify-between items-center mt-3">
+                            <div class="flex items-center space-x-4">
+                                <button class="flex items-center space-x-1 text-gray-500">
+                                    <i class="fas fa-heart text-red-500"></i>
+                                    <span>152</span>
+                                </button>
+                                <button class="flex items-center space-x-1 text-gray-500">
+                                    <i class="fas fa-comment"></i>
+                                    <span>32</span>
+                                </button>
+                            </div>
+                            <button class="text-gray-500"><i class="fas fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="home.html" class="bottom-nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span data-i18n="nav.home">Home</span>
+                </a>
+                <a href="wish_setting.html" class="bottom-nav-item">
+                    <i class="fas fa-star"></i>
+                    <span data-i18n="nav.wishes">Wishes</span>
+                </a>
+                <a href="writing_practice.html" class="bottom-nav-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span data-i18n="nav.practice">Practice</span>
+                </a>
+                <a href="community.html" class="bottom-nav-item">
+                    <i class="fas fa-users"></i>
+                    <span data-i18n="nav.community">Community</span>
+                </a>
+                <a href="profile.html" class="bottom-nav-item">
+                    <i class="fas fa-user"></i>
+                    <span data-i18n="nav.profile">Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>
+

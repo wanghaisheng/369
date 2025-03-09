@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <header class="bg-white shadow-sm p-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-bold text-purple-700" data-i18n="wishes.title">Wish Setting</h1>
+                    <div class="flex items-center space-x-3">
+                        <button class="language-button text-purple-600"><i class="fas fa-globe"></i></button>
+                        <button class="text-purple-600"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-4 overflow-y-auto">
+                <!-- Create New Wish Section -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h2 class="font-bold text-gray-800 mb-3" data-i18n="wishes.createNew">Create New Wish</h2>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="wishes.category">Category</label>
+                        <div class="flex space-x-2 overflow-x-auto pb-2">
+                            <button class="whitespace-nowrap px-3 py-1.5 bg-purple-600 text-white rounded-full text-sm font-medium" data-i18n="wishes.career">Career</button>
+                            <button class="whitespace-nowrap px-3 py-1.5 bg-gray-200 text-gray-700 rounded-full text-sm font-medium" data-i18n="wishes.health">Health</button>
+                            <button class="whitespace-nowrap px-3 py-1.5 bg-gray-200 text-gray-700 rounded-full text-sm font-medium" data-i18n="wishes.relationship">Relationship</button>
+                            <button class="whitespace-nowrap px-3 py-1.5 bg-gray-200 text-gray-700 rounded-full text-sm font-medium" data-i18n="wishes.finance">Finance</button>
+                            <button class="whitespace-nowrap px-3 py-1.5 bg-gray-200 text-gray-700 rounded-full text-sm font-medium" data-i18n="wishes.personal">Personal</button>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="wish-input" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="wishes.enterWish">Enter Your Wish</label>
+                        <textarea id="wish-input" rows="3" class="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="I want to..." data-i18n-placeholder="wishes.placeholder"></textarea>
+                    </div>
+                    
+                    <div class="flex space-x-2 mb-4">
+                        <button class="flex-1 flex items-center justify-center space-x-1 border border-gray-300 text-gray-700 py-2 rounded-lg">
+                            <i class="fas fa-microphone text-purple-600"></i>
+                            <span class="text-sm" data-i18n="wishes.voiceInput">Voice Input</span>
+                        </button>
+                        <button class="flex-1 flex items-center justify-center space-x-1 border border-gray-300 text-gray-700 py-2 rounded-lg">
+                            <i class="fas fa-image text-purple-600"></i>
+                            <span class="text-sm" data-i18n="wishes.visualize">Visualize</span>
+                        </button>
+                    </div>
+                    
+                    <button class="w-full bg-purple-600 text-white py-2.5 rounded-lg font-medium" data-i18n="wishes.generateAffirmation">Generate Affirmation</button>
+                </div>
+                
+                <!-- Generated Affirmation -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-gray-800" data-i18n="wishes.generatedAffirmation">Generated Affirmation</h3>
+                        <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.career">Career</span>
+                    </div>
+                    
+                    <p class="text-gray-800 mb-4">"I am confidently advancing in my career, attracting opportunities that align with my talents and passions, and creating a fulfilling professional life that brings me joy, purpose, and financial abundance."</p>
+                    
+                    <div class="flex space-x-2 mb-4">
+                        <button class="flex-1 flex items-center justify-center space-x-1 border border-gray-300 text-gray-700 py-2 rounded-lg">
+                            <i class="fas fa-sync-alt text-purple-600"></i>
+                            <span class="text-sm" data-i18n="wishes.regenerate">Regenerate</span>
+                        </button>
+                        <button class="flex-1 flex items-center justify-center space-x-1 border border-gray-300 text-gray-700 py-2 rounded-lg">
+                            <i class="fas fa-edit text-purple-600"></i>
+                            <span class="text-sm" data-i18n="wishes.edit">Edit</span>
+                        </button>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="wishes.practiceDuration">Practice Duration</label>
+                        <div class="flex space-x-2">
+                            <button class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-medium" data-i18n="wishes.days33">33 Days</button>
+                            <button class="flex-1 bg-purple-600 text-white py-2 rounded-lg text-sm font-medium" data-i18n="wishes.days45">45 Days</button>
+                            <button class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-medium" data-i18n="wishes.custom">Custom</button>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-purple-600 text-white py-2.5 rounded-lg font-medium" data-i18n="wishes.startPractice">Start Practice</button>
+                </div>
+                
+                <!-- Your Wishes -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="wishes.yourWishes">Your Wishes</h3>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-xs text-gray-600"><i class="fas fa-filter"></i> <span data-i18n="wishes.filter">Filter</span></button>
+                            <button class="text-xs text-gray-600"><i class="fas fa-sort"></i> <span data-i18n="wishes.sort">Sort</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.career">Career</span>
+                                <div class="flex items-center space-x-1">
+                                    <span class="text-xs text-gray-500" data-i18n="wishes.active">Active</span>
+                                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                                </div>
+                            </div>
+                            <p class="text-gray-800">"I am attracting abundant opportunities in my career that fulfill my purpose and bring me joy."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-calendar-alt text-gray-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500">24/45 <span data-i18n="wishes.days">days</span></span>
+                                </div>
+                                <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.practice">Practice</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.health">Health</span>
+                                <div class="flex items-center space-x-1">
+                                    <span class="text-xs text-gray-500" data-i18n="wishes.active">Active</span>
+                                    <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                                </div>
+                            </div>
+                            <p class="text-gray-800">"My body is healthy, strong, and full of energy. I take care of myself with love and respect."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-calendar-alt text-gray-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500">15/33 <span data-i18n="wishes.days">days</span></span>
+                                </div>
+                                <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.practice">Practice</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.relationship">Relationship</span>
+                                <div class="flex items-center space-x-1">
+                                    <span class="text-xs text-gray-500" data-i18n="wishes.completed">Completed</span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                </div>
+                            </div>
+                            <p class="text-gray-800">"I am attracting loving and supportive relationships that nurture my growth and bring joy into my life."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-calendar-alt text-gray-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500">33/33 <span data-i18n="wishes.days">days</span></span>
+                                </div>
+                                <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.viewResults">View Results</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="home.html" class="bottom-nav-item">
+                    <i class="fas fa-home"></i>
+                    <span data-i18n="nav.home">Home</span>
+                </a>
+                <a href="wish_setting.html" class="bottom-nav-item active">
+                    <i class="fas fa-star"></i>
+                    <span data-i18n="nav.wishes">Wishes</span>
+                </a>
+                <a href="writing_practice.html" class="bottom-nav-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span data-i18n="nav.practice">Practice</span>
+                </a>
+                <a href="community.html" class="bottom-nav-item">
+                    <i class="fas fa-users"></i>
+                    <span data-i18n="nav.community">Community</span>
+                </a>
+                <a href="profile.html" class="bottom-nav-item">
+                    <i class="fas fa-user"></i>
+                    <span data-i18n="nav.profile">Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>
+

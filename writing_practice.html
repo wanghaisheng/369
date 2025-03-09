@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <header class="bg-white shadow-sm p-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-bold text-purple-700" data-i18n="practice.title">Writing Practice</h1>
+                    <div class="flex items-center space-x-3">
+                        <button class="language-button text-purple-600"><i class="fas fa-globe"></i></button>
+                        <button class="text-purple-600"><i class="fas fa-history"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-4 overflow-y-auto">
+                <!-- Time Period Section -->
+                <div class="mb-6">
+                    <div class="grid grid-cols-3 gap-3">
+                        <button class="flex flex-col items-center justify-center bg-white rounded-xl p-3 shadow-sm border-2 border-purple-600">
+                            <i class="fas fa-sun text-yellow-500 text-2xl mb-1"></i>
+                            <span class="text-sm font-medium text-gray-800" data-i18n="practice.morning">Morning</span>
+                            <span class="text-xs text-gray-500">3x</span>
+                        </button>
+                        <button class="flex flex-col items-center justify-center bg-white rounded-xl p-3 shadow-sm">
+                            <i class="fas fa-cloud-sun text-orange-500 text-2xl mb-1"></i>
+                            <span class="text-sm font-medium text-gray-800" data-i18n="practice.afternoon">Afternoon</span>
+                            <span class="text-xs text-gray-500">6x</span>
+                        </button>
+                        <button class="flex flex-col items-center justify-center bg-white rounded-xl p-3 shadow-sm">
+                            <i class="fas fa-moon text-blue-500 text-2xl mb-1"></i>
+                            <span class="text-sm font-medium text-gray-800" data-i18n="practice.evening">Evening</span>
+                            <span class="text-xs text-gray-500">9x</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Current Affirmation -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-gray-800" data-i18n="practice.currentAffirmation">Current Affirmation</h3>
+                        <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full" data-i18n="practice.career">Career</span>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                        <p class="text-gray-800">"I am attracting abundant opportunities in my career that fulfill my purpose and bring me joy."</p>
+                    </div>
+                    
+                    <div class="flex justify-between mb-3">
+                        <span class="text-sm text-gray-600">
+                            <span class="font-medium" data-i18n="practice.remaining">Remaining</span>: 2/3
+                        </span>
+                        <button class="text-sm text-purple-600" data-i18n="practice.switchAffirmation">Switch Affirmation</button>
+                    </div>
+                </div>
+                
+                <!-- Writing Method -->
+                <div class="mb-6">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="practice.writingMethod">Writing Method</h3>
+                    
+                    <div class="flex space-x-3 mb-4">
+                        <button class="flex-1 flex flex-col items-center justify-center bg-white rounded-xl p-4 shadow-sm border-2 border-purple-600">
+                            <i class="fas fa-pen text-purple-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-medium text-gray-800" data-i18n="practice.handwriting">Handwriting</span>
+                        </button>
+                        <button class="flex-1 flex flex-col items-center justify-center bg-white rounded-xl p-4 shadow-sm">
+                            <i class="fas fa-keyboard text-gray-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-medium text-gray-800" data-i18n="practice.typing">Typing</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Handwriting Area -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-gray-800" data-i18n="practice.handwritingArea">Handwriting Area</h3>
+                        <button class="text-purple-600"><i class="fas fa-redo"></i></button>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 h-48 mb-4 flex items-center justify-center border-2 border-dashed border-gray-300">
+                        <div class="text-center text-gray-500">
+                            <i class="fas fa-pen text-4xl mb-2"></i>
+                            <p class="text-sm" data-i18n="practice.writeHere">Write your affirmation here</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1" data-i18n="practice.writingTools">Writing Tools</label>
+                        <div class="flex justify-between">
+                            <div class="flex space-x-2">
+                                <button class="w-8 h-8 rounded-full bg-black"></button>
+                                <button class="w-8 h-8 rounded-full bg-blue-600"></button>
+                                <button class="w-8 h-8 rounded-full bg-red-600"></button>
+                                <button class="w-8 h-8 rounded-full bg-green-600"></button>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-700"><i class="fas fa-text-width"></i></button>
+                                <button class="text-gray-700"><i class="fas fa-eraser"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-purple-600 text-white py-2.5 rounded-lg font-medium" data-i18n="practice.complete">Complete</button>
+                </div>
+                
+                <!-- Tips for Effective Practice -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="practice.tips">Tips for Effective Practice</h3>
+                    
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-2">
+                            <div class="text-purple-600 mt-0.5"><i class="fas fa-check-circle"></i></div>
+                            <p class="text-sm text-gray-700" data-i18n="practice.tip1">Write with focused attention and positive emotion</p>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <div class="text-purple-600 mt-0.5"><i class="fas fa-check-circle"></i></div>
+                            <p class="text-sm text-gray-700" data-i18n="practice.tip2">Visualize your desire while writing</p>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <div class="text-purple-600 mt-0.5"><i class="fas fa-check-circle"></i></div>
+                            <p class="text-sm text-gray-700" data-i18n="practice.tip3">Maintain a feeling of gratitude as if your wish has already manifested</p>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <div class="text-purple-600 mt-0.5"><i class="fas fa-check-circle"></i></div>
+                            <p class="text-sm text-gray-700" data-i18n="practice.tip4">Consistency is key - complete all 3 sessions each day</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="home.html" class="bottom-nav-item">
+                    <i class="fas fa-home"></i>
+                    <span data-i18n="nav.home">Home</span>
+                </a>
+                <a href="wish_setting.html" class="bottom-nav-item">
+                    <i class="fas fa-star"></i>
+                    <span data-i18n="nav.wishes">Wishes</span>
+                </a>
+                <a href="writing_practice.html" class="bottom-nav-item active">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span data-i18n="nav.practice">Practice</span>
+                </a>
+                <a href="community.html" class="bottom-nav-item">
+                    <i class="fas fa-users"></i>
+                    <span data-i18n="nav.community">Community</span>
+                </a>
+                <a href="profile.html" class="bottom-nav-item">
+                    <i class="fas fa-user"></i>
+                    <span data-i18n="nav.profile">Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <header class="bg-white shadow-sm p-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-bold text-purple-700" data-i18n="progress.title">Progress Tracking</h1>
+                    <div class="flex items-center space-x-3">
+                        <button class="language-button text-purple-600"><i class="fas fa-globe"></i></button>
+                        <button class="text-purple-600"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-4 overflow-y-auto">
+                <!-- Overall Progress -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="progress.overallProgress">Overall Progress</h3>
+                    
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <p class="text-sm text-gray-600" data-i18n="progress.streak">Current Streak</p>
+                            <p class="text-3xl font-bold text-purple-600">15 <span class="text-sm text-gray-600" data-i18n="progress.days">days</span></p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-gray-600" data-i18n="progress.completion">Completion Rate</p>
+                            <p class="text-3xl font-bold text-purple-600">93%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="h-64 mb-4">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                    
+                    <div class="flex justify-between text-xs text-gray-600">
+                        <span>Apr 1</span>
+                        <span>Apr 8</span>
+                        <span>Apr 15</span>
+                        <span data-i18n="progress.today">Today</span>
+                    </div>
+                </div>
+                
+                <!-- Active Affirmations Progress -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="progress.activeAffirmations">Active Affirmations Progress</h3>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-xs text-gray-600"><i class="fas fa-filter"></i> <span data-i18n="progress.filter">Filter</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full" data-i18n="progress.career">Career</span>
+                                <span class="text-xs text-gray-500">24/45 <span data-i18n="progress.days">days</span></span>
+                            </div>
+                            <p class="text-gray-800 text-sm mb-3">"I am attracting abundant opportunities in my career that fulfill my purpose and bring me joy."</p>
+                            
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 53%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>53% <span data-i18n="progress.complete">complete</span></span>
+                                <span data-i18n="progress.daysLeft">21 days left</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full" data-i18n="progress.health">Health</span>
+                                <span class="text-xs text-gray-500">15/33 <span data-i18n="progress.days">days</span></span>
+                            </div>
+                            <p class="text-gray-800 text-sm mb-3">"My body is healthy, strong, and full of energy. I take care of myself with love and respect."</p>
+                            
+                            <div class="w-full bg-gray-200 rounded-full h-2 mb-1">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>45% <span data-i18n="progress.complete">complete</span></span>
+                                <span data-i18n="progress.daysLeft">18 days left</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Daily Completion Rate -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="progress.dailyCompletion">Daily Completion Rate</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <div class="flex space-x-3 pb-2">
+                            <div class="flex flex-col items-center">
+                                <div class="text-xs text-gray-600 mb-1">Mon</div>
+                                <div class="flex flex-col space-y-1">
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-xs text-gray-600 mb-1">Tue</div>
+                                <div class="flex flex-col space-y-1">
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-xs text-gray-600 mb-1">Wed</div>
+                                <div class="flex flex-col space-y-1">
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-yellow-500 rounded-sm"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-xs text-gray-600 mb-1">Thu</div>
+                                <div class="flex flex-col space-y-1">
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-xs text-gray-600 mb-1">Fri</div>
+                                <div class="flex flex-col space-y-1">
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-yellow-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-xs text-gray-600 mb-1">Sat</div>
+                                <div class="flex flex-col space-y-1">
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="text-xs text-gray-600 mb-1">Sun</div>
+                                <div class="flex flex-col space-y-1">
+                                    <div class="w-10 h-3 bg-green-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-yellow-500 rounded-sm"></div>
+                                    <div class="w-10 h-3 bg-gray-300 rounded-sm"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mt-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-green-500 rounded-sm"></div>
+                            <span class="text-xs text-gray-600" data-i18n="progress.completed">Completed</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-yellow-500 rounded-sm"></div>
+                            <span class="text-xs text-gray-600" data-i18n="progress.partial">Partial</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-gray-300 rounded-sm"></div>
+                            <span class="text-xs text-gray-600" data-i18n="progress.missed">Missed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Achievement Badges -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="progress.achievementBadges">Achievement Badges</h3>
+                        <a href="#" class="text-xs text-purple-600" data-i18n="progress.viewAll">View All</a>
+                    </div>
+                    
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-1">
+                                <i class="fas fa-medal text-purple-600 text-xl"></i>
+                            </div>
+                            <span class="text-xs text-center text-gray-700" data-i18n="progress.week1">1 Week</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-1">
+                                <i class="fas fa-trophy text-purple-600 text-xl"></i>
+                            </div>
+                            <span class="text-xs text-center text-gray-700" data-i18n="progress.week2">2 Weeks</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-1">
+                                <i class="fas fa-award text-gray-400 text-xl"></i>
+                            </div>
+                            <span class="text-xs text-center text-gray-400" data-i18n="progress.month1">1 Month</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center mb-1">
+                                <i class="fas fa-crown text-gray-400 text-xl"></i>
+                            </div>
+                            <span class="text-xs text-center text-gray-400" data-i18n="progress.complete45">Complete 45</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="home.html" class="bottom-nav-item">
+                    <i class="fas fa-home"></i>
+                    <span data-i18n="nav.home">Home</span>
+                </a>
+                <a href="wish_setting.html" class="bottom-nav-item">
+                    <i class="fas fa-star"></i>
+                    <span data-i18n="nav.wishes">Wishes</span>
+                </a>
+                <a href="writing_practice.html" class="bottom-nav-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span data-i18n="nav.practice">Practice</span>
+                </a>
+                <a href="community.html" class="bottom-nav-item">
+                    <i class="fas fa-users"></i>
+                    <span data-i18n="nav.community">Community</span>
+                </a>
+                <a href="profile.html" class="bottom-nav-item active">
+                    <i class="fas fa-user"></i>
+                    <span data-i18n="nav.profile">Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var ctx = document.getElementById('progressChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Apr 1', 'Apr 3', 'Apr 5', 'Apr 7', 'Apr 9', 'Apr 11', 'Apr 13', 'Apr 15'],
+                    datasets: [{
+                        label: 'Daily Completion',
+                        data: [60, 80, 100, 90, 100, 80, 100, 90],
+                        backgroundColor: 'rgba(147, 51, 234, 0.2)',
+                        borderColor: 'rgba(147, 51, 234, 1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

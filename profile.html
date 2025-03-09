@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <header class="bg-white shadow-sm p-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-bold text-purple-700" data-i18n="profile.title">Profile</h1>
+                    <div class="flex items-center space-x-3">
+                        <button class="language-button text-purple-600"><i class="fas fa-globe"></i></button>
+                        <button class="text-purple-600"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-4 overflow-y-auto">
+                <!-- User Profile Section -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" class="w-16 h-16 rounded-full" alt="Profile">
+                        <div>
+                            <h2 class="font-bold text-gray-800 text-xl">Emily Johnson</h2>
+                            <p class="text-gray-600">@emilyjohnson</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mb-4">
+                        <div class="text-center">
+                            <p class="font-bold text-xl">15</p>
+                            <p class="text-xs text-gray-600" data-i18n="profile.streak">Day Streak</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-xl">3</p>
+                            <p class="text-xs text-gray-600" data-i18n="profile.activeWishes">Active Wishes</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="font-bold text-xl">2</p>
+                            <p class="text-xs text-gray-600" data-i18n="profile.manifestations">Manifestations</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-700 mb-4" data-i18n="profile.bio">Passionate about using the law of attraction to create positive change in my life. Love sharing my journey with like-minded manifestors!</p>
+                    
+                    <button class="w-full border border-purple-600 text-purple-600 py-2 rounded-lg font-medium" data-i18n="profile.editProfile">Edit Profile</button>
+                </div>
+                
+                <!-- App Settings -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-4" data-i18n="profile.appSettings">App Settings</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-bell text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.notifications">Notifications</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-moon text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.darkMode">Dark Mode</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-globe text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.language">Language</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <span class="text-sm text-gray-600">English</span>
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-clock text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.reminderTimes">Reminder Times</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <span class="text-sm text-gray-600" data-i18n="profile.customize">Customize</span>
+                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Manifestation History -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="profile.manifestationHistory">Manifestation History</h3>
+                        <a href="#" class="text-xs text-purple-600" data-i18n="profile.viewAll">View All</a>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800" data-i18n="profile.healthImprovement">Health Improvement</h4>
+                                    <p class="text-xs text-gray-500" data-i18n="profile.completed">Completed: March 15, 2023</p>
+                                </div>
+                            </div>
+                            <button class="text-gray-400"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fas fa-check text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800" data-i18n="profile.relationshipHealing">Relationship Healing</h4>
+                                    <p class="text-xs text-gray-500" data-i18n="profile.completed">Completed: February 20, 2023</p>
+                                </div>
+                            </div>
+                            <button class="text-gray-400"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Support & Feedback -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-4" data-i18n="profile.supportFeedback">Support & Feedback</h3>
+                    
+                    <div class="space-y-4">
+                        <button class="flex justify-between items-center w-full">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-question-circle text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.helpCenter">Help Center</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                        </button>
+                        
+                        <button class="flex justify-between items-center w-full">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-star text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.rateApp">Rate the App</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                        </button>
+                        
+                        <button class="flex justify-between items-center w-full">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-comment text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.sendFeedback">Send Feedback</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                        </button>
+                        
+                        <button class="flex justify-between items-center w-full">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <i class="fas fa-share-alt text-purple-600"></i>
+                                </div>
+                                <span class="text-gray-800" data-i18n="profile.inviteFriends">Invite Friends</span>
+                            </div>
+                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="w-full py-3 text-red-500 font-medium mb-6" data-i18n="profile.signOut">Sign Out</button>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="home.html" class="bottom-nav-item">
+                    <i class="fas fa-home"></i>
+                    <span data-i18n="nav.home">Home</span>
+                </a>
+                <a href="wish_setting.html" class="bottom-nav-item">
+                    <i class="fas fa-star"></i>
+                    <span data-i18n="nav.wishes">Wishes</span>
+                </a>
+                <a href="writing_practice.html" class="bottom-nav-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span data-i18n="nav.practice">Practice</span>
+                </a>
+                <a href="community.html" class="bottom-nav-item">
+                    <i class="fas fa-users"></i>
+                    <span data-i18n="nav.community">Community</span>
+                </a>
+                <a href="profile.html" class="bottom-nav-item active">
+                    <i class="fas fa-user"></i>
+                    <span data-i18n="nav.profile">Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+</body>
+</html>
+
