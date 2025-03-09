@@ -12,9 +12,10 @@
         <div class="container mx-auto px-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-purple-600" data-i18n="app.title">369 Manifestation Method</h1>
             <div class="flex items-center space-x-4">
-                <select id="language-selector" class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-purple-500">
-                    <option value="en">English</option>
-                    <option value="zh">中文</option>
+                <!-- 修改语言选择器部分 -->
+                <select id="language-selector" class="border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-purple-500" aria-label="Select Language">
+                    <option value="en" data-i18n="language.english">English</option>
+                    <option value="zh" data-i18n="language.chinese">中文</option>
                 </select>
                 <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition" data-i18n="app.demoButton">Open Full App Demo</button>
             </div>
@@ -101,6 +102,228 @@
             </div>
         </section>
 
+        <!-- 新增科学原理部分 -->
+        <section class="mb-16 bg-purple-50 py-12 rounded-lg">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8" data-i18n="landing.scienceTitle">The Science Behind 369</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Science of Manifestation" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-xl font-bold mb-4" data-i18n="landing.scienceSubtitle">Combining Ancient Wisdom with Modern Psychology</h3>
+                        <p class="text-gray-700 mb-4" data-i18n="landing.scienceDesc1">The 369 method combines Nikola Tesla's fascination with these numbers with principles of neuroplasticity and habit formation.</p>
+                        <p class="text-gray-700 mb-4" data-i18n="landing.scienceDesc2">Writing your affirmations multiple times creates new neural pathways, while the specific rhythm of 3-6-9 helps maintain focus and consistency.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-purple-600 text-2xl font-bold">3</div>
+                                <p class="text-sm" data-i18n="landing.number3">Creation</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-purple-600 text-2xl font-bold">6</div>
+                                <p class="text-sm" data-i18n="landing.number6">Manifestation</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow text-center">
+                                <div class="text-purple-600 text-2xl font-bold">9</div>
+                                <p class="text-sm" data-i18n="landing.number9">Completion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- 新增用户评价部分 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8" data-i18n="landing.testimonialsTitle">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-purple-700 font-bold">SL</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold" data-i18n="testimonials.name1">Sarah L.</h4>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700" data-i18n="testimonials.text1">After 33 days of consistent practice with the 369 method, I received a job offer for a position I had been visualizing. This app made it so easy to stay consistent!</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-purple-700 font-bold">MJ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold" data-i18n="testimonials.name2">Michael J.</h4>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700" data-i18n="testimonials.text2">The reminders and tracking features helped me maintain my practice even on busy days. After 45 days, I noticed significant improvements in my health and energy levels.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-purple-700 font-bold">AW</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold" data-i18n="testimonials.name3">Aisha W.</h4>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700" data-i18n="testimonials.text3">I was skeptical at first, but the community support and the structured approach of this app convinced me to try. Within weeks, I started seeing positive changes in my relationships.</p>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="text-purple-600 hover:text-purple-800 font-medium" data-i18n="landing.moreTestimonials">Read More Success Stories</a>
+            </div>
+        </section>
+    
+        <!-- New "How It Works" section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8" data-i18n="landing.howItWorksTitle">How the 369 Method Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-purple-600 text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="howItWorks.step1Title">Set Your Intention</h3>
+                    <p class="text-gray-700" data-i18n="howItWorks.step1Desc">Define your wish clearly and create a powerful affirmation that resonates with your desire.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-purple-600 text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="howItWorks.step2Title">Follow the 3-6-9 Pattern</h3>
+                    <p class="text-gray-700" data-i18n="howItWorks.step2Desc">Write your affirmation 3 times in the morning, 6 times in the afternoon, and 9 times in the evening.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-purple-600 text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3" data-i18n="howItWorks.step3Title">Maintain Consistency</h3>
+                    <p class="text-gray-700" data-i18n="howItWorks.step3Desc">Practice for 33 or 45 days consistently while visualizing your desire as already manifested.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New FAQ section -->
+        <section class="mb-16 bg-purple-50 py-12 rounded-lg">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8" data-i18n="landing.faqTitle">Frequently Asked Questions</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="mb-6 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="faq.q1">Why is it called the 369 method?</h3>
+                        <p class="text-gray-700" data-i18n="faq.a1">The method is named after Nikola Tesla's belief that 3, 6, and 9 are powerful numbers in the universe. It also refers to the practice pattern: writing affirmations 3 times in the morning, 6 times in the afternoon, and 9 times in the evening.</p>
+                    </div>
+                    <div class="mb-6 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="faq.q2">How long does it take to see results?</h3>
+                        <p class="text-gray-700" data-i18n="faq.a2">Results vary by individual and the nature of your desire. Many users report seeing initial signs within 33 days, while others complete a 45-day cycle for more significant manifestations. Consistency is key to success.</p>
+                    </div>
+                    <div class="mb-6 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="faq.q3">Can I manifest multiple desires at once?</h3>
+                        <p class="text-gray-700" data-i18n="faq.a3">While it's possible to work on multiple manifestations, we recommend focusing on one primary desire at a time for beginners. This helps maintain clear focus and energy. As you become more experienced, you can expand to multiple practices.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold mb-2" data-i18n="faq.q4">What if I miss a day of practice?</h3>
+                        <p class="text-gray-700" data-i18n="faq.a4">Consistency is important, but missing a day doesn't invalidate your practice. Simply resume the next day and maintain your positive intention. Our app helps you stay on track with gentle reminders and streak protection features.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New newsletter signup section -->
+        <section class="mb-16 bg-purple-600 text-white py-12 rounded-lg">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4" data-i18n="landing.newsletterTitle">Get Manifestation Tips & Updates</h2>
+                <p class="text-lg max-w-2xl mx-auto mb-8" data-i18n="landing.newsletterDesc">Join our newsletter to receive exclusive manifestation techniques, success stories, and app updates directly to your inbox.</p>
+                <div class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-purple-300" data-i18n-placeholder="landing.emailPlaceholder">
+                    <button class="bg-white text-purple-600 px-6 py-3 rounded-lg font-medium hover:bg-purple-100 transition" data-i18n="landing.subscribe">Subscribe</button>
+                </div>
+                <p class="text-sm mt-4 text-purple-200" data-i18n="landing.privacyNote">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </section>
+
+        <!-- 新增等待名单部分 -->
+        <section class="mb-16 bg-gradient-to-r from-purple-500 to-indigo-600 text-white py-12 rounded-lg">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl font-bold mb-4" data-i18n="waitingList.title">加入等待名单</h2>
+                        <p class="text-lg mb-6" data-i18n="waitingList.subtitle">成为首批体验369显化方法应用的用户</p>
+                        <p class="mb-6" data-i18n="waitingList.description">我们正在开发一款强大的应用，帮助您通过369方法实现愿望显化。留下您的联系方式，我们将在应用发布时第一时间通知您。</p>
+                        <ul class="mb-8">
+                            <li class="flex items-center mb-3">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span data-i18n="waitingList.earlyAccess">获得早期访问权限</span>
+                            </li>
+                            <li class="flex items-center mb-3">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span data-i18n="waitingList.exclusiveContent">获取独家显化内容和技巧</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-2"></i>
+                                <span data-i18n="waitingList.specialOffer">享受特别优惠和折扣</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                            <form id="waitlist-form" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium mb-1" data-i18n="waitingList.nameLabel">您的姓名</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500" data-i18n-placeholder="waitingList.namePlaceholder">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium mb-1" data-i18n="waitingList.emailLabel">电子邮箱</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500" data-i18n-placeholder="waitingList.emailPlaceholder">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium mb-1" data-i18n="waitingList.phoneLabel">手机号码（可选）</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500" data-i18n-placeholder="waitingList.phonePlaceholder">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1" data-i18n="waitingList.interestLabel">您对哪些显化领域感兴趣？</label>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <label class="flex items-center">
+                                            <input type="checkbox" name="interests" value="career" class="mr-2">
+                                            <span data-i18n="waitingList.careerInterest">事业发展</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" name="interests" value="health" class="mr-2">
+                                            <span data-i18n="waitingList.healthInterest">健康与养生</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" name="interests" value="relationship" class="mr-2">
+                                            <span data-i18n="waitingList.relationshipInterest">人际关系</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" name="interests" value="wealth" class="mr-2">
+                                            <span data-i18n="waitingList.wealthInterest">财富丰盛</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1" data-i18n="waitingList.experienceLabel">您之前是否有使用显化技术的经验？</label>
+                                    <select id="experience" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        <option value="none" data-i18n="waitingList.noExperience">没有经验</option>
+                                        <option value="some" data-i18n="waitingList.someExperience">有一些经验</option>
+                                        <option value="experienced" data-i18n="waitingList.experiencedUser">有丰富经验</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="privacy-consent" class="mt-1 mr-2">
+                                    <label for="privacy-consent" class="text-sm" data-i18n="waitingList.privacyConsent">我同意接收关于369显化方法应用的更新和通知</label>
+                                </div>
+                                <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-md hover:bg-purple-700 transition" data-i18n="waitingList.joinButton">加入等待名单</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="mb-16">
             <div class="text-center">
                 <h2 class="text-3xl font-bold mb-4" data-i18n="landing.startJourney">Start Your Manifestation Journey Today</h2>
@@ -127,5 +350,6 @@
     </footer>
 
     <script src="js/i18n.js"></script>
+    <script src="js/waitlist.js"></script>
 </body>
 </html>
