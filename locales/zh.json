@@ -3,10 +3,6 @@
     "title": "369显化方法",
     "demoButton": "打开完整应用演示"
   },
-  "language": {
-    "english": "英文",
-    "chinese": "中文"
-  },
   "landing": {
     "mainTitle": "使用369方法显化你的梦想",
     "subtitle": "强大的显化技术，结合数字力量和吸引力法则，帮助你实现愿望",
@@ -18,166 +14,16 @@
     "appScreenshots": "应用截图",
     "startJourney": "今天开始你的显化之旅",
     "journeyDesc": "加入成千上万已经成功通过369方法显化梦想的人们",
-    "startNow": "立即开始",
-    
-    "scienceTitle": "369背后的科学原理",
-    "scienceSubtitle": "结合古老智慧与现代心理学",
-    "scienceDesc1": "369方法将尼古拉·特斯拉对这些数字的迷恋与神经可塑性和习惯形成原理相结合。",
-    "scienceDesc2": "多次书写肯定句创建新的神经通路，而3-6-9的特定节奏有助于保持专注和一致性。",
-    "number3": "创造",
-    "number6": "显化",
-    "number9": "完成",
-    
-    "testimonialsTitle": "用户评价",
-    "moreTestimonials": "阅读更多成功故事",
-    
-    "howItWorksTitle": "369方法如何运作",
-    
-    "faqTitle": "常见问题",
-    
-    "newsletterTitle": "获取显化技巧与更新",
-    "newsletterDesc": "订阅我们的通讯，直接收到独家显化技巧、成功案例和应用更新。",
-    "emailPlaceholder": "您的电子邮箱",
-    "subscribe": "订阅",
-    "privacyNote": "我们尊重您的隐私。随时可以取消订阅。"
+    "startNow": "立即开始"
   },
-  
-  "waitingList": {
-    "title": "加入等待名单",
-    "subtitle": "成为首批体验369显化方法应用的用户",
-    "description": "我们正在开发一款强大的应用，帮助您通过369方法实现愿望显化。留下您的联系方式，我们将在应用发布时第一时间通知您。",
-    "earlyAccess": "获得早期访问权限",
-    "exclusiveContent": "获取独家显化内容和技巧",
-    "specialOffer": "享受特别优惠和折扣",
-    "nameLabel": "您的姓名",
-    "namePlaceholder": "请输入您的姓名",
-    "emailLabel": "电子邮箱",
-    "emailPlaceholder": "请输入您的电子邮箱",
-    "phoneLabel": "手机号码（可选）",
-    "phonePlaceholder": "请输入您的手机号码",
-    "interestLabel": "您对哪些显化领域感兴趣？",
-    "interestPlaceholder": "选择您感兴趣的领域",
-    "careerInterest": "事业发展",
-    "healthInterest": "健康与养生",
-    "relationshipInterest": "人际关系",
-    "wealthInterest": "财富丰盛",
-    "personalGrowthInterest": "个人成长",
-    "experienceLabel": "您之前是否有使用显化技术的经验？",
-    "noExperience": "没有经验",
-    "someExperience": "有一些经验",
-    "experiencedUser": "有丰富经验",
-    "notificationPrefLabel": "通知偏好",
-    "emailNotification": "电子邮件通知",
-    "smsNotification": "短信通知",
-    "referralLabel": "您是如何了解到我们的？",
-    "referralPlaceholder": "请选择",
-    "socialMedia": "社交媒体",
-    "friend": "朋友推荐",
-    "search": "搜索引擎",
-    "other": "其他",
-    "privacyConsent": "我同意接收关于369显化方法应用的更新和通知",
-    "termsConsent": "我已阅读并同意服务条款和隐私政策",
-    "joinButton": "加入等待名单",
-    "thankYouTitle": "感谢您的加入！",
-    "thankYouMessage": "您已成功加入369显化方法应用的等待名单。我们将在应用准备就绪时通知您。",
-    "shareTitle": "与朋友分享",
-    "shareMessage": "邀请您的朋友加入等待名单，一起开始显化之旅",
-    "referralCode": "您的专属邀请码",
-    "copyCode": "复制代码",
-    "codeCopied": "已复制",
-    "inviteFriends": "邀请好友",
-    "positionLabel": "您在等待名单中的位置",
-    "peopleAhead": "前面还有 {count} 人",
-    "moveUpTitle": "想要提前获得访问权限？",
-    "shareToMoveUp": "分享给朋友可以提升您在等待名单中的位置",
-    "followSocial": "关注我们的社交媒体获取最新进展"
-  },
-  
-  "faq": {
-    "q1": "为什么它被称为369方法？",
-    "a1": "该方法以尼古拉·特斯拉对宇宙中3、6、9数字力量的信念命名。它也指的是练习模式：早上写3次肯定句，下午写6次，晚上写9次。",
-    "q2": "需要多长时间才能看到结果？",
-    "a2": "结果因个人和愿望性质而异。许多用户报告在33天内看到初步迹象，而其他人则完成45天周期以获得更显著的显化效果。持续性是成功的关键。",
-    "q3": "我可以同时显化多个愿望吗？",
-    "a3": "虽然可以同时进行多个显化，但我们建议初学者一次专注于一个主要愿望。这有助于保持清晰的焦点和能量。随着经验增加，您可以扩展到多个练习。",
-    "q4": "如果我错过了一天的练习怎么办？",
-    "a4": "持续性很重要，但错过一天并不会使您的练习无效。只需第二天继续并保持积极的意图。我们的应用程序通过温和的提醒和连续保护功能帮助您保持正轨。"
-  },
-  
-  "howItWorks": {
-    "step1Title": "设定意图",
-    "step1Desc": "清晰定义你的愿望，创建与你的渴望产生共鸣的强大肯定句。",
-    "step2Title": "遵循3-6-9模式",
-    "step2Desc": "早上写3次肯定句，下午写6次，晚上写9次。",
-    "step3Title": "保持一致性",
-    "step3Desc": "连续实践33天或45天，同时将你的愿望视为已经实现。"
-  },
-  "testimonials": {
-    "name1": "莎拉 L.",
-    "text1": "在使用369方法坚持练习33天后，我收到了一份我一直在可视化的职位的工作邀请。这个应用让我能够轻松保持一致性！",
-    "name2": "迈克尔 J.",
-    "text2": "提醒和追踪功能帮助我即使在忙碌的日子里也能保持练习。45天后，我注意到我的健康和能量水平有了显著改善。",
-    "name3": "艾莎 W.",
-    "text3": "起初我持怀疑态度，但这个应用的社区支持和结构化方法说服了我尝试。几周内，我开始看到我的人际关系出现积极变化。"
-  },
-  
   "features": {
     "wishTitle": "愿望设定与肯定句",
-    "wishDesc": "设定你的愿望并获取符合17秒规则的AI生成的积极肯定句。",
+    "wishDesc": "设定你的愿望，获取符合17秒规则的AI生成肯定句。",
     "writingTitle": "369书写练习",
-    "writingDesc": "获取早晨、下午和晚上的练习提醒，完成3-6-9周期。",
+    "writingDesc": "在早上、下午和晚上接收提醒，完成3-6-9循环的书写练习。",
     "progressTitle": "进度追踪",
-    "progressDesc": "通过直观的图表追踪你的练习，并为33天或45天的持续练习设定目标。",
-    "communityTitle": "支持社区",
-    "communityDesc": "与志同道合的显化者联系，分享成功故事，并在你的旅程中获得支持。",
-    "reminderTitle": "智能提醒",
-    "reminderDesc": "在最佳时间接收个性化通知，保持你的练习计划。",
-    "visualizationTitle": "引导式可视化",
-    "visualizationDesc": "通过与书写练习相辅相成的引导式可视化练习增强你的显化效果。"
+    "progressDesc": "通过直观的图表追踪你的练习，设定33天或45天的持续练习目标。"
   },
-  
-  "benefits": {
-    "title": "369方法的好处",
-    "clarity": "增强思维清晰度",
-    "clarityDesc": "定期练习有助于消除思维迷雾，让你专注于真正的愿望。",
-    "consistency": "提高一致性",
-    "consistencyDesc": "结构化的方法使维持每日显化练习变得更容易。",
-    "confidence": "增强自信心",
-    "confidenceDesc": "当你看到结果时，你对自己显化能力的信念会变得更强。",
-    "awareness": "提高意识",
-    "awarenessDesc": "你将更加敏锐地察觉与你愿望相关的同步性和机会。",
-    "results": "更快的显化结果",
-    "resultsDesc": "与随机肯定句相比，3-6-9模式加速了显化过程。"
-  },
-  
-  "expertTips": {
-    "title": "专家显化技巧",
-    "emotionTitle": "感受情感",
-    "emotionDesc": "在练习中注入真实的积极情感，就像你的愿望已经实现一样。",
-    "gratitudeTitle": "练习感恩",
-    "gratitudeDesc": "在每次书写练习的开始和结束时，对你已经拥有的一切表示感恩。",
-    "detachmentTitle": "与结果分离",
-    "detachmentDesc": "相信这个过程，避免过分关注你的愿望何时或如何实现。",
-    "alignmentTitle": "调整你的行动",
-    "alignmentDesc": "采取支持你显化目标的启发性行动。",
-    "resistanceTitle": "释放阻力",
-    "resistanceDesc": "识别并放下可能阻碍你显化的限制性信念。"
-  },
-  
-  "appFeatures": {
-    "title": "增强练习效果的应用功能",
-    "aiTitle": "AI肯定句生成器",
-    "aiDesc": "创建强大的、个性化的肯定句，优化显化成功率。",
-    "reminderTitle": "智能提醒系统",
-    "reminderDesc": "通过早晨、下午和晚上的可定制通知，确保不会错过任何练习环节。",
-    "trackingTitle": "可视化进度追踪",
-    "trackingDesc": "监控你的一致性，日复一日地见证你的显化 journey 展开。",
-    "journalTitle": "显化日记",
-    "journalDesc": "记录洞见、同步性和你的愿望正在显化的迹象。",
-    "communityTitle": "支持社区",
-    "communityDesc": "与其他练习者联系，分享经验并获得灵感。"
-  },
-  
   "screens": {
     "home": "主页",
     "wishSetting": "愿望设定",
@@ -186,23 +32,15 @@
     "community": "社区",
     "profile": "个人资料"
   },
-  
   "footer": {
-    "copyright": "© 2023 版权所有",
-    "terms": "服务条款",
-    "privacy": "隐私政策",
-    "contact": "联系我们",
-    "about": "关于我们",
-    "blog": "博客",
-    "help": "帮助中心"
+    "copyright": "© 2023 版权所有"
   },
-  
   "nav": {
     "home": "主页",
     "wishes": "愿望",
     "practice": "练习",
     "community": "社区",
-    "profile": "个人资料"
+    "profile": "我的"
   },
   "home": {
     "title": "控制面板",
@@ -333,7 +171,7 @@
     "streak": "连续天数",
     "activeWishes": "活跃愿望",
     "manifestations": "已显化",
-    "bio": "热衷于使用吸引力法则生活在创造积极变化。喜欢与志同道合的显化者分享我的旅程！",
+    "bio": "热衷于使用吸引力法则在生活中创造积极变化。喜欢与志同道合的显化者分享我的旅程！",
     "editProfile": "编辑资料",
     "appSettings": "应用设置",
     "notifications": "通知",
