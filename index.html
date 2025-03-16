@@ -9,13 +9,15 @@
     <link href="css/gamified.css" rel="stylesheet">
     <meta name="description" content="Manifest your dreams with the powerful 369 method" data-i18n-content="meta.description">
     <meta name="keywords" content="manifestation, 369 method, law of attraction, manifesting, affirmations" data-i18n-content="meta.keywords">
+    <link rel="canonical" href="http://369.heymanifestation.com" />
 </head>
 <body class="bg-purple-50 font-sans">
     <div class="cosmic-bg"></div>
     <nav class="sticky top-0 z-50 bg-gradient-to-r from-purple-900 to-indigo-800 shadow-lg py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-white" data-i18n="app.title">369 Manifestation Method</h1>
+            <a href="index.html" class="text-2xl font-bold text-white" data-i18n="app.title">369 Manifestation Method</a>
             <div class="flex items-center space-x-4">
+                <a href="about.html" class="text-white hover:text-purple-200 transition-colors">About Us</a>
                 <div class="relative group">
                     <button id="language-toggle" class="bg-purple-700 hover:bg-purple-600 text-white px-3 py-2 rounded-lg transition-all duration-300 flex items-center">
                         <i class="fas fa-globe mr-2"></i>
@@ -25,9 +27,11 @@
                     <div id="language-dropdown" class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl py-2 hidden group-hover:block">
                         <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="en">English</a>
                         <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="zh">中文</a>
+                        <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="ja">日本語</a>
+                        <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="es">Español</a>
                     </div>
                 </div>
-                <a href="home.html" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-bold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl pulse-effect" data-i18n="app.tryNow">Try Now</a>
+                <a href="login.html" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-bold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl pulse-effect" data-i18n="app.tryNow">Try Now</a>
             </div>
         </div>
     </nav>
@@ -41,7 +45,7 @@
                 </div>
                 <p class="text-lg md:text-xl mb-8 text-purple-200" data-i18n="hero.subtitle">Harness the cosmic power of numbers to manifest your dreams and transform your life in just minutes a day</p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="home.html" class="btn-primary pulse-animation" data-i18n="hero.startJourney">Begin Your Journey</a>
+                    <a href="login.html" class="btn-primary pulse-animation" data-i18n="hero.startJourney">Begin Your Journey</a>
                     <a href="#how-it-works" class="btn-secondary" data-i18n="hero.learnMore">Learn How It Works</a>
                 </div>
                 <div class="mt-8 flex items-center">
@@ -55,7 +59,7 @@
             </div>
             <div class="lg:w-1/2 relative z-10">
                 <div class="phone-mockup floating">
-                    <iframe src="home.html" class="phone-screen"></iframe>
+                    <iframe src="onboarding.html" class="phone-screen"></iframe>
                 </div>
             </div>
         </div>
@@ -125,7 +129,7 @@
             </div>
             
             <div class="mt-16 text-center">
-                <a href="home.html" class="btn-primary" data-i18n="howItWorks.tryItNow">Try It Now for Free</a>
+                <a href="login.html" class="btn-primary" data-i18n="howItWorks.tryItNow">Try It Now for Free</a>
             </div>
         </div>
     </section>
@@ -141,7 +145,7 @@
                 <div class="carousel-track">
                     <div class="carousel-slide">
                         <div class="phone-frame">
-                            <iframe src="home.html" class="phone-screen"></iframe>
+                            <iframe src="onboarding.html" class="phone-screen"></iframe>
                             <p class="text-center mt-4 font-medium text-purple-800" data-i18n="screens.home">Home Dashboard</p>
                         </div>
                     </div>
@@ -452,7 +456,7 @@
                         <div class="price">
                             <span class="original">$14.99</span>
                             <span class="currency">$</span>
-                            <span class="amount">7</span>
+                            <span class="amount">2</span>
                             <span class="cents">.99</span>
                             <span class="period" data-i18n="pricing.standard.period">/month</span>
                         </div>
@@ -467,7 +471,7 @@
                         </ul>
                     </div>
                     <div class="pricing-cta">
-                        <a href="#" class="btn-primary full-width" data-i18n="pricing.standard.cta">Start 7-Day Trial</a>
+                        <a href="login.html" class="btn-primary full-width" data-i18n="pricing.standard.cta">Start 7-Day Trial</a>
                     </div>
                 </div>
                 
@@ -477,7 +481,8 @@
                         <div class="price">
                             <span class="original">$199.99</span>
                             <span class="currency">$</span>
-                            <span class="amount">97</span>
+                            <span class="amount">59</span>
+                            <span class="cents">.99</span>
                             <span class="period" data-i18n="pricing.premium.period">Lifetime</span>
                         </div>
                     </div>
@@ -509,7 +514,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="cta.title">Start Manifesting Your Dreams Today</h2>
                 <p class="text-lg opacity-90 mb-8" data-i18n="cta.text">Join thousands of successful manifestors and transform your reality with the power of the 369 method. Your dream life is just 45 days away.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="home.html" class="btn-primary glow-effect" data-i18n="cta.getStarted">Start Your Journey Now</a>
+                    <a href="login.html" class="btn-primary glow-effect" data-i18n="cta.getStarted">Start Your Journey Now</a>
                     <a href="#pricing" class="btn-secondary" data-i18n="cta.viewPlans">View Our Plans</a>
                 </div>
                 <div class="mt-8 flex justify-center">
@@ -549,6 +554,7 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4" data-i18n="footer.resources.title">Resources</h3>
                     <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.resources.link1">Blog</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.resources.link2">Success Stories</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.resources.link3">FAQ</a></li>
@@ -561,6 +567,8 @@
                     <select id="footer-language-selector" class="bg-gray-800 text-white px-4 py-2 rounded-lg w-full">
                         <option value="en" data-i18n="footer.language.english">English</option>
                         <option value="zh" data-i18n="footer.language.chinese">中文</option>
+                        <option value="ja" data-i18n="footer.language.japanese">日本語</option>
+                        <option value="es" data-i18n="footer.language.spanish">Español</option>
                     </select>
                 </div>
             </div>
@@ -569,11 +577,14 @@
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-400 text-sm" data-i18n="footer.copyright"> 2023 369 Manifestation Method. All rights reserved.</p>
                     <div class="flex flex-wrap gap-4 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.terms">Terms of Service</a>
-                        <a href="#" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.privacy">Privacy Policy</a>
                         <a href="#" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.cookies">Cookies</a>
                         <div class="text-gray-400 text-sm" data-i18n="footer.affiliate">This page contains affiliate links. We may earn a commission if you sign up through our links.</div>
                     </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="text-gray-400 text-sm">Manifest 369 to go is part of our series of 20+ manifestation apps, including "Manifestation pillow to go" and "Manifestation two cups to go".</p>
                 </div>
             </div>
         </div>

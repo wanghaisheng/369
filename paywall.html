@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/gamified.css" rel="stylesheet">
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <div class="relative w-full h-full bg-gradient-to-b from-purple-900 to-purple-700 text-white overflow-y-auto">
+                <!-- Header with Close Button -->
+                <div class="absolute top-4 right-4 z-10">
+                    <button id="close-paywall" class="text-white bg-white bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <!-- Content -->
+                <div class="p-6 pt-16">
+                    <!-- Top Section -->
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-white rounded-full p-4 mb-4">
+                            <i class="fas fa-gem text-purple-600 text-4xl"></i>
+                        </div>
+                        <h1 class="text-3xl font-bold mb-2" data-i18n="paywall.title">Unlock Your Full Potential</h1>
+                        <p class="text-lg opacity-90" data-i18n="paywall.subtitle">Choose the perfect plan to accelerate your manifestation journey</p>
+                    </div>
+                    
+                    <!-- Features -->
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 bg-opacity-30 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <p data-i18n="paywall.feature1">Unlimited affirmations & wishes</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 bg-opacity-30 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <p data-i18n="paywall.feature2">Advanced progress tracking</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 bg-opacity-30 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <p data-i18n="paywall.feature3">AI-powered affirmation generator</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-500 bg-opacity-30 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <p data-i18n="paywall.feature4">Full community participation</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-purple-500 bg-opacity-30 rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <p data-i18n="paywall.feature5">No ads, pure manifestation experience</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Plans -->
+                    <div class="space-y-4 mb-4">
+                        <!-- Monthly Plan -->
+                        <div class="plan-option bg-white bg-opacity-10 border-2 border-transparent rounded-xl p-4 cursor-pointer transition-all duration-300" data-plan="monthly">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="font-bold text-lg" data-i18n="paywall.monthly.title">Monthly</h3>
+                                    <p class="text-sm opacity-90" data-i18n="paywall.monthly.subtitle">Perfect to start your journey</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-lg">$7.99</div>
+                                    <div class="text-xs opacity-80" data-i18n="paywall.monthly.period">per month</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Annual Plan (Best Value) -->
+                        <div class="plan-option bg-white bg-opacity-10 border-2 border-yellow-400 rounded-xl p-4 cursor-pointer transition-all duration-300 relative" data-plan="annual">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="font-bold text-lg" data-i18n="paywall.annual.title">Annual</h3>
+                                    <p class="text-sm opacity-90" data-i18n="paywall.annual.subtitle">Save 50% with annual billing</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs line-through opacity-70">$95.88</div>
+                                    <div class="font-bold text-lg">$47.99</div>
+                                    <div class="text-xs opacity-80" data-i18n="paywall.annual.period">per year</div>
+                                </div>
+                            </div>
+                            <div class="absolute -top-2 -right-2 bg-yellow-400 text-purple-900 text-xs font-bold px-2 py-1 rounded-lg" data-i18n="paywall.bestValue">BEST VALUE</div>
+                        </div>
+                        
+                        <!-- Lifetime Plan -->
+                        <div class="plan-option bg-white bg-opacity-10 border-2 border-transparent rounded-xl p-4 cursor-pointer transition-all duration-300" data-plan="lifetime">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="font-bold text-lg" data-i18n="paywall.lifetime.title">Lifetime</h3>
+                                    <p class="text-sm opacity-90" data-i18n="paywall.lifetime.subtitle">One-time payment</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-xs line-through opacity-70">$199.99</div>
+                                    <div class="font-bold text-lg">$97.99</div>
+                                    <div class="text-xs opacity-80" data-i18n="paywall.lifetime.period">pay once</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Start Trial Button -->
+                    <button id="select-plan-btn" class="w-full bg-gradient-to-r from-pink-500 to-purple-600 py-4 rounded-xl text-white font-bold text-lg shadow-lg mb-4" data-i18n="paywall.startTrial">Start 7-Day Free Trial</button>
+                    
+                    <!-- Guarantee -->
+                    <div class="text-center text-sm opacity-80 mb-8">
+                        <p data-i18n="paywall.guarantee">30-day money-back guarantee, no questions asked.</p>
+                    </div>
+                    
+                    <!-- Testimonial -->
+                    <div class="bg-white bg-opacity-10 rounded-xl p-4 mb-6">
+                        <div class="flex items-start">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="w-12 h-12 rounded-full mr-4" alt="User avatar">
+                            <div>
+                                <div class="flex text-yellow-400 mb-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-sm mb-2" data-i18n="paywall.testimonial">
+                                    "The premium features helped me manifest my dream job in just 33 days! The tracking tools made all the difference in staying consistent."
+                                </p>
+                                <p class="text-xs font-medium" data-i18n="paywall.testimonialName">— Emily Johnson</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Terms & Privacy Policy -->
+                    <div class="text-center text-xs mb-6">
+                        <p data-i18n="paywall.terms">
+                            By continuing, you agree to our <a href="#" class="underline">Terms of Service</a> and 
+                            <a href="#" class="underline">Privacy Policy</a>.
+                        </p>
+                    </div>
+                    
+                    <!-- Continue with Free -->
+                    <div class="text-center">
+                        <button id="continue-free-btn" class="text-sm underline opacity-80" data-i18n="paywall.continueFree">Continue with limited free version</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const planOptions = document.querySelectorAll('.plan-option');
+            const selectPlanBtn = document.getElementById('select-plan-btn');
+            const continueFreeBtn = document.getElementById('continue-free-btn');
+            const closePaywallBtn = document.getElementById('close-paywall');
+            let selectedPlan = 'annual'; // Default to annual plan
+            
+            // Initialize - highlight the default plan
+            highlightSelectedPlan();
+            
+            // Plan selection
+            planOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    selectedPlan = this.getAttribute('data-plan');
+                    highlightSelectedPlan();
+                    updateButtonText();
+                });
+            });
+            
+            // Select plan button
+            selectPlanBtn.addEventListener('click', function() {
+                // Here you would normally handle payment processing
+                // For demo purposes, we'll just redirect to home
+                localStorage.setItem('selectedPlan', selectedPlan);
+                localStorage.setItem('isPremium', 'true');
+                window.location.href = 'home.html';
+            });
+            
+            // Continue with free
+            continueFreeBtn.addEventListener('click', function() {
+                localStorage.setItem('isPremium', 'false');
+                window.location.href = 'home.html';
+            });
+            
+            // Close paywall
+            closePaywallBtn.addEventListener('click', function() {
+                localStorage.setItem('isPremium', 'false');
+                window.location.href = 'home.html';
+            });
+            
+            function highlightSelectedPlan() {
+                planOptions.forEach(option => {
+                    const plan = option.getAttribute('data-plan');
+                    if (plan === selectedPlan) {
+                        option.classList.add('bg-opacity-20', 'border-white');
+                        option.classList.remove('border-transparent');
+                        // Special case for annual which already has a colored border
+                        if (plan === 'annual') {
+                            option.classList.add('border-yellow-400');
+                            option.classList.remove('border-white');
+                        }
+                    } else {
+                        option.classList.remove('bg-opacity-20', 'border-white');
+                        option.classList.add('border-transparent');
+                        // Keep the yellow border for annual
+                        if (plan === 'annual') {
+                            option.classList.add('border-yellow-400');
+                        }
+                    }
+                });
+            }
+            
+            function updateButtonText() {
+                const i18nKey = 'paywall.select' + selectedPlan.charAt(0).toUpperCase() + selectedPlan.slice(1);
+                const defaultText = {
+                    'monthly': 'Start 7-Day Free Trial',
+                    'annual': 'Select Annual Plan',
+                    'lifetime': 'Get Lifetime Access'
+                }[selectedPlan];
+                
+                selectPlanBtn.textContent = document.querySelector(`[data-i18n="${i18nKey}"]`) 
+                    ? document.querySelector(`[data-i18n="${i18nKey}"]`).textContent 
+                    : defaultText;
+            }
+        });
+    </script>
+</body>
+</html>

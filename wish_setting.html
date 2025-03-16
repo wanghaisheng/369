@@ -108,6 +108,16 @@
                         </div>
                     </div>
                     
+                    <!-- Free user limitation notice -->
+                    <div class="bg-gray-100 rounded-lg p-3 mb-4 text-center">
+                        <p class="text-sm text-gray-700" data-i18n="wishes.dailyLimit">Daily Task Limit</p>
+                        <p class="text-xs text-gray-600"><span data-i18n="wishes.freeLimit">Free User Limit</span>: 1/3 <span data-i18n="wishes.tasks">tasks</span></p>
+                        <div class="flex justify-center space-x-3 mt-2">
+                            <button class="text-xs bg-purple-600 text-white py-1 px-3 rounded-full" data-i18n="wishes.upgrade">Upgrade</button>
+                            <button class="text-xs bg-green-600 text-white py-1 px-3 rounded-full"><i class="fas fa-play mr-1"></i> <span data-i18n="wishes.watchAd">Watch Ad</span></button>
+                        </div>
+                    </div>
+                    
                     <div class="space-y-3">
                         <div class="bg-white p-4 rounded-xl shadow-sm">
                             <div class="flex justify-between items-center mb-2">
@@ -123,50 +133,199 @@
                                     <i class="fas fa-calendar-alt text-gray-400 text-xs"></i>
                                     <span class="text-xs text-gray-500">24/45 <span data-i18n="wishes.days">days</span></span>
                                 </div>
-                                <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.practice">Practice</button>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.practice">Practice</button>
+                                    <button class="text-gray-500 affirmation-settings-btn" aria-label="Settings"><i class="fas fa-cog"></i></button>
+                                </div>
+                            </div>
+                            
+                            <!-- Individual Affirmation Settings Modal (Hidden by default) -->
+                            <div class="hidden affirmation-settings-modal mt-4 pt-4 border-t border-gray-200">
+                                <div class="space-y-4">
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-700 mb-2" data-i18n="wishes.reminderTimes">Reminder Times</h4>
+                                        <div class="grid grid-cols-3 gap-2 text-center">
+                                            <div>
+                                                <p class="text-xs text-gray-500" data-i18n="wishes.morning">Morning</p>
+                                                <p class="text-sm font-medium">07:00 AM</p>
+                                                <p class="text-xs text-gray-500">3x</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-gray-500" data-i18n="wishes.afternoon">Afternoon</p>
+                                                <p class="text-sm font-medium">01:00 PM</p>
+                                                <p class="text-xs text-gray-500">6x</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-gray-500" data-i18n="wishes.evening">Evening</p>
+                                                <p class="text-sm font-medium">08:00 PM</p>
+                                                <p class="text-xs text-gray-500">9x</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-700 mb-2" data-i18n="wishes.completionMethods">Completion Methods</h4>
+                                        <div class="flex space-x-2">
+                                            <div class="flex-1 text-center p-2 bg-purple-100 rounded-lg">
+                                                <i class="fas fa-pencil-alt text-purple-600"></i>
+                                                <p class="text-xs font-medium mt-1" data-i18n="wishes.handwriting">Handwriting</p>
+                                            </div>
+                                            <div class="flex-1 text-center p-2 bg-gray-100 rounded-lg">
+                                                <i class="fas fa-keyboard text-gray-600"></i>
+                                                <p class="text-xs font-medium mt-1" data-i18n="wishes.typing">Typing</p>
+                                            </div>
+                                            <div class="flex-1 text-center p-2 bg-gray-100 rounded-lg">
+                                                <i class="fas fa-microphone text-gray-600"></i>
+                                                <p class="text-xs font-medium mt-1" data-i18n="wishes.voice">Voice</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="text-sm font-medium text-gray-700 mb-2" data-i18n="wishes.practiceDuration">Practice Duration</h4>
+                                        <div class="flex space-x-2">
+                                            <button class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-medium" data-i18n="wishes.days33">33 Days</button>
+                                            <button class="flex-1 bg-purple-600 text-white py-2 rounded-lg text-sm font-medium" data-i18n="wishes.days45">45 Days</button>
+                                            <button class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-medium" data-i18n="wishes.custom">Custom</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex justify-end">
+                                        <button class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium close-settings-btn" data-i18n="wishes.save">Save</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="bg-white p-4 rounded-xl shadow-sm">
-                            <div class="flex justify-between items-center mb-2">
+                        <div class="bg-white p-4 rounded-xl shadow-sm relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-30 rounded-xl flex flex-col items-center justify-center z-10">
+                                <i class="fas fa-lock text-white text-2xl mb-2"></i>
+                                <p class="text-white text-sm px-4 text-center" data-i18n="wishes.premiumRequired">Premium access required</p>
+                                <div class="flex mt-3 space-x-2">
+                                    <button class="bg-purple-600 text-white text-xs py-1.5 px-3 rounded-lg" data-i18n="wishes.upgrade">Upgrade</button>
+                                    <button class="bg-green-600 text-white text-xs py-1.5 px-3 rounded-lg flex items-center">
+                                        <i class="fas fa-play mr-1 text-xs"></i> <span data-i18n="wishes.earnMore">Earn More Tasks</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2 opacity-50">
                                 <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.health">Health</span>
                                 <div class="flex items-center space-x-1">
                                     <span class="text-xs text-gray-500" data-i18n="wishes.active">Active</span>
                                     <span class="w-2 h-2 bg-green-500 rounded-full"></span>
                                 </div>
                             </div>
-                            <p class="text-gray-800">"My body is healthy, strong, and full of energy. I take care of myself with love and respect."</p>
-                            <div class="flex justify-between items-center mt-3">
+                            <p class="text-gray-800 opacity-50">"My body is healthy, strong, and full of energy. I take care of myself with love and respect."</p>
+                            <div class="flex justify-between items-center mt-3 opacity-50">
                                 <div class="flex items-center space-x-1">
                                     <i class="fas fa-calendar-alt text-gray-400 text-xs"></i>
                                     <span class="text-xs text-gray-500">15/33 <span data-i18n="wishes.days">days</span></span>
                                 </div>
-                                <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.practice">Practice</button>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.practice">Practice</button>
+                                    <button class="text-gray-500" aria-label="Settings"><i class="fas fa-cog"></i></button>
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="bg-white p-4 rounded-xl shadow-sm">
-                            <div class="flex justify-between items-center mb-2">
+                        <div class="bg-white p-4 rounded-xl shadow-sm relative">
+                            <div class="absolute inset-0 bg-black bg-opacity-30 rounded-xl flex flex-col items-center justify-center z-10">
+                                <i class="fas fa-lock text-white text-2xl mb-2"></i>
+                                <p class="text-white text-sm px-4 text-center" data-i18n="wishes.premiumRequired">Premium access required</p>
+                                <div class="flex mt-3 space-x-2">
+                                    <button class="bg-purple-600 text-white text-xs py-1.5 px-3 rounded-lg" data-i18n="wishes.upgrade">Upgrade</button>
+                                    <button class="bg-green-600 text-white text-xs py-1.5 px-3 rounded-lg flex items-center">
+                                        <i class="fas fa-play mr-1 text-xs"></i> <span data-i18n="wishes.earnMore">Earn More Tasks</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-2 opacity-50">
                                 <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.relationship">Relationship</span>
                                 <div class="flex items-center space-x-1">
                                     <span class="text-xs text-gray-500" data-i18n="wishes.completed">Completed</span>
                                     <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
                                 </div>
                             </div>
-                            <p class="text-gray-800">"I am attracting loving and supportive relationships that nurture my growth and bring joy into my life."</p>
-                            <div class="flex justify-between items-center mt-3">
+                            <p class="text-gray-800 opacity-50">"I am attracting loving and supportive relationships that nurture my growth and bring joy into my life."</p>
+                            <div class="flex justify-between items-center mt-3 opacity-50">
                                 <div class="flex items-center space-x-1">
                                     <i class="fas fa-calendar-alt text-gray-400 text-xs"></i>
                                     <span class="text-xs text-gray-500">33/33 <span data-i18n="wishes.days">days</span></span>
                                 </div>
-                                <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.viewResults">View Results</button>
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.viewResults">View Results</button>
+                                    <button class="text-gray-500" aria-label="Settings"><i class="fas fa-cog"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Community Affirmations -->
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="wishes.communityAffirmations">Community Affirmations</h3>
+                        <button class="text-xs text-purple-600" data-i18n="wishes.viewMore">View More</button>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.career">Career</span>
+                                <span class="text-xs text-gray-500">@johndoe</span>
+                            </div>
+                            <p class="text-gray-800">"I am attracting success and opportunities in my career that align perfectly with my skills and passions."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-heart text-gray-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500">124</span>
+                                </div>
+                                <button class="text-purple-600 text-sm font-medium px-3 py-1 border border-purple-600 rounded-full" data-i18n="wishes.addToDaily">Add to Daily</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.health">Health</span>
+                                <span class="text-xs text-gray-500">@fituser</span>
+                            </div>
+                            <p class="text-gray-800">"I am grateful for my healthy body. Every day I grow stronger, healthier, and more energetic."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-heart text-gray-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500">98</span>
+                                </div>
+                                <button class="text-purple-600 text-sm font-medium px-3 py-1 border border-purple-600 rounded-full" data-i18n="wishes.addToDaily">Add to Daily</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-xl shadow-sm">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full" data-i18n="wishes.relationship">Relationship</span>
+                                <span class="text-xs text-gray-500">@loveyou</span>
+                            </div>
+                            <p class="text-gray-800">"I attract loving, supportive relationships that nurture my highest good and bring joy to all involved."</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <div class="flex items-center space-x-1">
+                                    <i class="fas fa-heart text-gray-400 text-xs"></i>
+                                    <span class="text-xs text-gray-500">156</span>
+                                </div>
+                                <button class="text-purple-600 text-sm font-medium px-3 py-1 border border-purple-600 rounded-full" data-i18n="wishes.addToDaily">Add to Daily</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Bottom Navigation -->
+            <!-- Task Button Above Home -->
+            <div class="bottom-nav-task">
+                <button class="practice-task-btn bg-purple-600 text-white h-12 w-12 rounded-full shadow-lg flex items-center justify-center">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+            </div>
+
+            <!-- Bottom Navigation with Task Button -->
             <nav class="bottom-nav">
                 <a href="home.html" class="bottom-nav-item">
                     <i class="fas fa-home"></i>
@@ -176,13 +335,13 @@
                     <i class="fas fa-star"></i>
                     <span data-i18n="nav.wishes">Wishes</span>
                 </a>
-                <a href="writing_practice.html" class="bottom-nav-item">
-                    <i class="fas fa-pencil-alt"></i>
-                    <span data-i18n="nav.practice">Practice</span>
+                <a href="progress.html" class="bottom-nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span data-i18n="nav.progress">Progress</span>
                 </a>
-                <a href="community.html" class="bottom-nav-item">
-                    <i class="fas fa-users"></i>
-                    <span data-i18n="nav.community">Community</span>
+                <a href="leaderboard.html" class="bottom-nav-item">
+                    <i class="fas fa-trophy"></i>
+                    <span data-i18n="nav.leaderboard">Leaderboard</span>
                 </a>
                 <a href="profile.html" class="bottom-nav-item">
                     <i class="fas fa-user"></i>
@@ -193,6 +352,177 @@
     </div>
 
     <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Task button leads to writing practice
+            const taskBtn = document.querySelector('.practice-task-btn');
+            if (taskBtn) {
+                taskBtn.addEventListener('click', function() {
+                    window.location.href = 'writing_practice.html';
+                });
+            }
+            
+            // Generated Affirmation - Add to Daily button
+            const addToDailyBtn = document.querySelector('.bg-white.rounded-xl.p-5.mb-6.shadow-sm:nth-of-type(2) button.w-full');
+            if (addToDailyBtn) {
+                addToDailyBtn.addEventListener('click', function() {
+                    // Get the affirmation text and category
+                    const affirmationSection = document.querySelector('.bg-white.rounded-xl.p-5.mb-6.shadow-sm:nth-of-type(2)');
+                    const affirmationText = affirmationSection.querySelector('p.text-gray-800').textContent;
+                    const categoryEl = affirmationSection.querySelector('.bg-purple-100.text-purple-700');
+                    const category = categoryEl ? categoryEl.textContent : 'Career';
+                    
+                    // Create a new wish in Your Wishes section
+                    addWishToYourWishes(affirmationText, category);
+                    
+                    // Show confirmation
+                    alert('Affirmation added to your daily tasks!');
+                });
+            }
+            
+            // Function to add a new wish to Your Wishes section
+            function addWishToYourWishes(text, category) {
+                const yourWishesContainer = document.querySelector('.mb-6:nth-of-type(3) .space-y-3');
+                if (!yourWishesContainer) return;
+                
+                // Create new wish element
+                const newWish = document.createElement('div');
+                newWish.className = 'bg-white p-4 rounded-xl shadow-sm';
+                newWish.innerHTML = `
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full">${category}</span>
+                        <div class="flex items-center space-x-1">
+                            <span class="text-xs text-gray-500" data-i18n="wishes.active">Active</span>
+                            <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        </div>
+                    </div>
+                    <p class="text-gray-800">${text}</p>
+                    <div class="flex justify-between items-center mt-3">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-calendar-alt text-gray-400 text-xs"></i>
+                            <span class="text-xs text-gray-500">1/45 <span data-i18n="wishes.days">days</span></span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-purple-600 text-sm font-medium" data-i18n="wishes.practice">Practice</button>
+                            <button class="text-gray-500 affirmation-settings-btn" aria-label="Settings"><i class="fas fa-cog"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Individual Affirmation Settings Modal (Hidden by default) -->
+                    <div class="hidden affirmation-settings-modal mt-4 pt-4 border-t border-gray-200">
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-700 mb-2" data-i18n="wishes.reminderTimes">Reminder Times</h4>
+                                <div class="grid grid-cols-3 gap-2 text-center">
+                                    <div>
+                                        <p class="text-xs text-gray-500" data-i18n="wishes.morning">Morning</p>
+                                        <p class="text-sm font-medium">07:00 AM</p>
+                                        <p class="text-xs text-gray-500">3x</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-500" data-i18n="wishes.afternoon">Afternoon</p>
+                                        <p class="text-sm font-medium">01:00 PM</p>
+                                        <p class="text-xs text-gray-500">6x</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-500" data-i18n="wishes.evening">Evening</p>
+                                        <p class="text-sm font-medium">08:00 PM</p>
+                                        <p class="text-xs text-gray-500">9x</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-700 mb-2" data-i18n="wishes.completionMethods">Completion Methods</h4>
+                                <div class="flex space-x-2">
+                                    <div class="flex-1 text-center p-2 bg-purple-100 rounded-lg">
+                                        <i class="fas fa-pencil-alt text-purple-600"></i>
+                                        <p class="text-xs font-medium mt-1" data-i18n="wishes.handwriting">Handwriting</p>
+                                    </div>
+                                    <div class="flex-1 text-center p-2 bg-gray-100 rounded-lg">
+                                        <i class="fas fa-keyboard text-gray-600"></i>
+                                        <p class="text-xs font-medium mt-1" data-i18n="wishes.typing">Typing</p>
+                                    </div>
+                                    <div class="flex-1 text-center p-2 bg-gray-100 rounded-lg">
+                                        <i class="fas fa-microphone text-gray-600"></i>
+                                        <p class="text-xs font-medium mt-1" data-i18n="wishes.voice">Voice</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-sm font-medium text-gray-700 mb-2" data-i18n="wishes.practiceDuration">Practice Duration</h4>
+                                <div class="flex space-x-2">
+                                    <button class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-medium" data-i18n="wishes.days33">33 Days</button>
+                                    <button class="flex-1 bg-purple-600 text-white py-2 rounded-lg text-sm font-medium" data-i18n="wishes.days45">45 Days</button>
+                                    <button class="flex-1 bg-gray-200 text-gray-700 py-2 rounded-lg text-sm font-medium" data-i18n="wishes.custom">Custom</button>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end">
+                                <button class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium close-settings-btn" data-i18n="wishes.save">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add to container
+                yourWishesContainer.prepend(newWish);
+                
+                // Attach event listeners to the new settings buttons
+                const newSettingsBtn = newWish.querySelector('.affirmation-settings-btn');
+                const newCloseBtn = newWish.querySelector('.close-settings-btn');
+                
+                if (newSettingsBtn) {
+                    newSettingsBtn.addEventListener('click', function() {
+                        const modal = this.closest('div').nextElementSibling;
+                        if (modal && modal.classList.contains('affirmation-settings-modal')) {
+                            modal.classList.toggle('hidden');
+                        }
+                    });
+                }
+                
+                if (newCloseBtn) {
+                    newCloseBtn.addEventListener('click', function() {
+                        const modal = this.closest('.affirmation-settings-modal');
+                        if (modal) {
+                            modal.classList.add('hidden');
+                        }
+                    });
+                }
+                
+                // Update the i18n for the new elements
+                if (typeof updateContent === 'function') {
+                    updateContent(window.currentLangData || {});
+                }
+            }
+            
+            // Fix settings toggle functionality for existing wishes
+            const settingsButtons = document.querySelectorAll('.affirmation-settings-btn');
+            const closeButtons = document.querySelectorAll('.close-settings-btn');
+            
+            settingsButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Fixed: correctly find the settings modal
+                    const parentItem = this.closest('.bg-white.p-4.rounded-xl.shadow-sm');
+                    if (!parentItem) return;
+                    
+                    const modal = parentItem.querySelector('.affirmation-settings-modal');
+                    if (modal) {
+                        modal.classList.toggle('hidden');
+                    }
+                });
+            });
+            
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.affirmation-settings-modal');
+                    if (modal) {
+                        modal.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-

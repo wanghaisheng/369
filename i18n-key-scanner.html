@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n Key Scanner</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #6b46c1;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .tool-description {
+            background-color: #f8f9fa;
+            border-left: 4px solid #6b46c1;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background-color: #f0fff4;
+            border: 1px solid #c6f6d5;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #6b46c1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #553c9a;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        .log-container {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .log-entry {
+            margin-bottom: 5px;
+        }
+        .log-error {
+            color: #e53e3e;
+        }
+        .log-success {
+            color: #38a169;
+        }
+        .log-info {
+            color: #3182ce;
+        }
+        #download-container {
+            margin-top: 30px;
+        }
+        .locale-file-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .json-preview {
+            max-height: 300px;
+            overflow: auto;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .download-link {
+            display: inline-block;
+            background-color: #6b46c1;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .download-link:hover {
+            background-color: #553c9a;
+        }
+    </style>
+</head>
+<body>
+    <h1>i18n Key Scanner</h1>
+    
+    <div class="tool-description">
+        <p>This tool helps you scan all HTML files in your project for i18n keys and compares them with locale JSON files by:</p>
+        <ul>
+            <li>Scanning multiple HTML files for data-i18n attributes</li>
+            <li>Comparing with existing locale JSON files</li>
+            <li>Identifying missing keys</li>
+            <li>Creating a report of missing keys by file</li>
+            <li>Generating updated JSON files with missing keys</li>
+        </ul>
+    </div>
+
+    <div class="instructions">
+        <h2>How to Use:</h2>
+        <ol>
+            <li>Configure the scan settings below or use the defaults.</li>
+            <li>Click the "Run Key Scanner Tool" button.</li>
+            <li>The tool will scan all HTML files in the specified folder.</li>
+            <li>It will compare these keys with the existing locale files.</li>
+            <li>A report will be generated showing missing keys and which files use them.</li>
+            <li>If missing keys are found, updated JSON files will be available for download.</li>
+        </ol>
+        <p><strong>Note:</strong> By default, the scanner will look for HTML files in the same directory as this tool and locale files in the "locale" subfolder.</p>
+    </div>
+
+    <div class="config-section">
+        <h3>Scan Configuration:</h3>
+        <div class="form-group">
+            <label for="scan-path">HTML Files Path:</label>
+            <input type="text" id="scan-path" placeholder="Path to scan for HTML files" value="./">
+            <button id="browse-scan-path">Browse</button>
+        </div>
+        <div class="form-group">
+            <label for="locale-path">Locale Files Path:</label>
+            <input type="text" id="locale-path" placeholder="Path to locale files" value="./locale">
+            <button id="browse-locale-path">Browse</button>
+        </div>
+        <div class="form-group">
+            <label for="file-pattern">File Pattern:</label>
+            <input type="text" id="file-pattern" placeholder="*.html" value="*.html">
+            <span class="help-text">Use comma to separate multiple patterns (e.g., *.html, *.js)</span>
+        </div>
+        <div class="form-group">
+            <label for="supported-languages">Supported Languages:</label>
+            <input type="text" id="supported-languages" placeholder="en,zh" value="en,zh">
+            <span class="help-text">Comma-separated list of language codes</span>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="run-tool">Run Key Scanner Tool</button>
+        <button id="clear-results">Clear Results</button>
+    </div>
+
+    <div id="results">
+        <h2>Results:</h2>
+        <div class="log-container" id="log-output"></div>
+    </div>
+
+    <div id="download-container">
+        <!-- Download links will be added here -->
+    </div>
+
+    <!-- Load the improved i18n key scanner script -->
+    <script src="js/i18n-key-scanner-improved.js"></script>
+    
+    <script>
+        // Override console.log to display in our UI
+        const logOutput = document.getElementById('log-output');
+        const originalConsoleLog = console.log;
+        const originalConsoleError = console.error;
+    
+        console.log = function() {
+            // Call the original console.log
+            originalConsoleLog.apply(console, arguments);
+            
+            // Add to our UI
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry log-info';
+            logEntry.textContent = Array.from(arguments).join(' ');
+            logOutput.appendChild(logEntry);
+            
+            // Auto-scroll to bottom
+            logOutput.scrollTop = logOutput.scrollHeight;
+        };
+    
+        console.error = function() {
+            // Call the original console.error
+            originalConsoleError.apply(console, arguments);
+            
+            // Add to our UI
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry log-error';
+            logEntry.textContent = Array.from(arguments).join(' ');
+            logOutput.appendChild(logEntry);
+            
+            // Auto-scroll to bottom
+            logOutput.scrollTop = logOutput.scrollHeight;
+        };
+    
+        // Button event handlers
+        document.getElementById('run-tool').addEventListener('click', function() {
+            // Clear previous results
+            logOutput.innerHTML = '';
+            document.getElementById('download-container').innerHTML = '';
+            
+            // Log start message
+            console.log('Starting i18n Key Scanner Tool...');
+            
+            // Get configuration values
+            const scanPath = document.getElementById('scan-path').value.trim() || './';
+            const localePath = document.getElementById('locale-path').value.trim() || './locale';
+            const filePattern = document.getElementById('file-pattern').value.trim() || '*.html';
+            const supportedLanguagesStr = document.getElementById('supported-languages').value.trim() || 'en,zh';
+            const supportedLanguages = supportedLanguagesStr.split(',').map(lang => lang.trim());
+            
+            // Run the tool with configuration
+            runScanner({
+                scanPath: scanPath,
+                localePath: localePath,
+                filePattern: filePattern,
+                supportedLanguages: supportedLanguages
+            });
+        });
+    
+        // Browse button handlers
+        document.getElementById('browse-scan-path').addEventListener('click', function() {
+            // Create a file input element to allow multiple file selection
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.multiple = true; // Allow selecting multiple files
+            fileInput.accept = '.html,.htm'; // Only accept HTML files
+            fileInput.style.display = 'none';
+            document.body.appendChild(fileInput);
+            
+            // Handle file selection
+            fileInput.onchange = function(event) {
+                const files = Array.from(event.target.files);
+                if (files.length > 0) {
+                    // Keep the current path but indicate multiple files selected
+                    const currentPath = document.getElementById('scan-path').value.trim() || './';
+                    document.getElementById('scan-path').value = currentPath;
+                    
+                    // Log the selected files
+                    const fileNames = files.map(file => file.name).join(', ');
+                    console.log(`Selected ${files.length} HTML files: ${fileNames}`);
+                    
+                    // Store the selected files in a global variable for reference
+                    window.selectedHtmlFiles = files;
+                    
+                    // Show a confirmation message
+                    alert(`Selected ${files.length} HTML files for scanning`);
+                } else {
+                    console.log('No files selected');
+                }
+                // Clean up
+                document.body.removeChild(fileInput);
+            };
+            
+            // Trigger file selection dialog
+            fileInput.click();
+        });
+        
+        document.getElementById('browse-locale-path').addEventListener('click', function() {
+            // Create a file input element to allow file selection
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '.json'; // Only accept JSON files
+            fileInput.style.display = 'none';
+            document.body.appendChild(fileInput);
+            
+            // Handle file selection
+            fileInput.onchange = function(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    // Get the directory path from the file
+                    const fileName = file.name;
+                    const isLocaleFile = fileName.match(/^[a-z]{2}(\.json)$/i); // Check if it's a language file (e.g., en.json)
+                    
+                    if (isLocaleFile) {
+                        // Extract the directory path
+                        const fullPath = file.webkitRelativePath || file.name;
+                        let dirPath = './locale';
+                        
+                        if (fullPath.includes('/')) {
+                            const pathParts = fullPath.split('/');
+                            pathParts.pop(); // Remove the file name
+                            dirPath = pathParts.join('/');
+                        }
+                        
+                        // Update the locale path input
+                        document.getElementById('locale-path').value = dirPath;
+                        console.log(`Selected locale file: ${fileName} from ${dirPath}`);
+                    } else {
+                        console.log(`Selected file ${fileName} does not appear to be a locale file (e.g., en.json)`);
+                    }
+                }
+                // Clean up
+                document.body.removeChild(fileInput);
+            };
+            
+            // Trigger file selection dialog
+            fileInput.click();
+        });
+        
+        // Clear results button handler
+        document.getElementById('clear-results').addEventListener('click', function() {
+            clearResults();
+        });
+    </script>
+</body>
+</html>

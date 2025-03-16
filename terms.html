@@ -1,156 +1,757 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Read the terms and conditions for using the mobile simulator.">
-  <meta name="keywords" content="terms, conditions, mobile, simulator, terms of service">
-  <meta name="author" content="Your Name or Company">
-  <meta http-equiv="Content-Language" content="en">
-
-  <!-- Canonical Link -->
-  <link rel="canonical" href="https://www.yourwebsite.com/terms" />
-
-  <!-- Open Graph for Social Media -->
-  <meta property="og:title" content="Terms of Service">
-  <meta property="og:description" content="Read the terms and conditions for using the mobile simulator.">
-  <meta property="og:image" content="https://www.yourwebsite.com/terms-image.jpg">
-  <meta property="og:url" content="https://www.yourwebsite.com/terms">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Terms of Service">
-  <meta name="twitter:description" content="Read the terms and conditions for using the mobile simulator.">
-  <meta name="twitter:image" content="https://www.yourwebsite.com/terms-image.jpg">
-  <meta name="twitter:creator" content="@yourtwitterhandle">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.yourwebsite.com/favicon.ico" type="image/x-icon">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y) {
-      window.clarity=window.clarity||function(){(clarity.q=clarity.q||[]).push(arguments)};
-      clarity('set', 'anonymizeIP', true);
-      i=l.createElement('script');i.async=1;i.src=r;i.type='text/javascript';
-      t=l.getElementsByTagName('script')[0];t.parentNode.insertBefore(i,t);
-    })(document,window,'script','https://www.clarity.ms/tag/XXXXXX');
-  </script>
-
-  <title>Terms of Service</title>
-
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 20px;
-      height: auto;
-      text-align: left;
-    }
-
-    .terms-container {
-      width: 100%;
-      max-width: 800px;
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 15px;
-    }
-
-    /* Adjustments for Mobile and PC */
-    @media (min-width: 768px) {
-      body {
-        padding: 40px;
-      }
-
-      .terms-container {
-        padding: 40px;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      p {
-        font-size: 1.2rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .terms-container {
-        max-width: 1000px;
-      }
-
-      h1 {
-        font-size: 3rem;
-      }
-
-      p {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/gamified.css" rel="stylesheet">
 </head>
+<body class="bg-purple-50 font-sans">
+    <div class="cosmic-bg"></div>
+    <nav class="sticky top-0 z-50 bg-gradient-to-r from-purple-900 to-indigo-800 shadow-lg py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white" data-i18n="app.title">369 Manifestation Method</a>
+            <div class="flex items-center space-x-4">
+                <div class="relative group">
+                    <button id="language-toggle" class="bg-purple-700 hover:bg-purple-600 text-white px-3 py-2 rounded-lg transition-all duration-300 flex items-center">
+                        <i class="fas fa-globe mr-2"></i>
+                        <span data-i18n="nav.language">Language</span>
+                        <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div id="language-dropdown" class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-xl py-2 hidden group-hover:block">
+                        <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="en">English</a>
+                        <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="zh">中文</a>
+                        <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="ja">日本語</a>
+                        <a href="#" class="language-option block px-4 py-2 hover:bg-purple-100 transition-colors" data-lang="es">Español</a>
+                    </div>
+                </div>
+                <a href="home.html" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-bold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl pulse-effect" data-i18n="app.tryNow">Try Now</a>
+            </div>
+        </div>
+    </nav>
 
-<body>
-  <div class="terms-container">
-    <h1>Terms of Service</h1>
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold mb-6 text-purple-900">Terms of Service</h1>
+                <p class="text-gray-600 italic">Last Updated: June 1, 2023</p>
+            </div>
+            
+            <div class="space-y-6 text-gray-700">
+                <h2 class="text-2xl font-bold text-purple-800">1. Introduction</h2>
+                <p>Welcome to Manifest 369 to go ("we," "our," or "us"). These Terms of Service ("Terms") govern your access to and use of the Manifest 369 to go app and related services (collectively, the "Service").</p>
+                <p>By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access the Service.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">2. User Accounts</h2>
+                <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account.</p>
+                <p>You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree not to disclose your password to any third party.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">3. Subscriptions</h2>
+                <p>Some parts of the Service are offered on a subscription basis. You will be billed in advance on a recurring and periodic basis, depending on the type of subscription plan you select.</p>
+                <p>At the end of each period, your subscription will automatically renew under the same conditions unless you cancel it or we cancel it.</p>
+                <p>You may cancel your subscription either through your online account management or by contacting our customer support team.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">4. Free Trial</h2>
+                <p>We may, at our sole discretion, offer a subscription with a free trial for a limited period of time.</p>
+                <p>You may be required to enter your billing information to sign up for the free trial. If you do, we will not bill you until the free trial has expired.</p>
+                <p>At the end of the free trial period, unless you canceled your subscription, you will be automatically charged the applicable subscription fee.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">5. Content</h2>
+                <p>Our Service allows you to post, share, and otherwise make available certain information, text, or materials ("Content"). You are responsible for the Content you post on or through the Service.</p>
+                <p>By posting Content, you grant us the right to use, modify, publicly perform, publicly display, reproduce, and distribute such Content on and through the Service.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">6. Prohibited Uses</h2>
+                <p>You may use our Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:</p>
+                <ul class="list-disc pl-6">
+                    <li>In any way that violates any applicable national or international law or regulation.</li>
+                    <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail", "chain letter," "spam," or any other similar solicitation.</li>
+                    <li>To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity.</li>
+                    <li>In any way that infringes upon the rights of others, or in any way is illegal, threatening, fraudulent, or harmful.</li>
+                </ul>
+                
+                <h2 class="text-2xl font-bold text-purple-800">7. Intellectual Property</h2>
+                <p>The Service and its original content (excluding Content provided by users), features, and functionality are and will remain the exclusive property of Manifest 369 to go and its licensors.</p>
+                <p>The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Manifest 369 to go.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">8. Termination</h2>
+                <p>We may terminate or suspend your account immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+                <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">9. Limitation of Liability</h2>
+                <p>In no event shall Manifest 369 to go, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">10. Changes</h2>
+                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days' notice prior to any new terms taking effect.</p>
+                <p>What constitutes a material change will be determined at our sole discretion. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                
+                <h2 class="text-2xl font-bold text-purple-800">11. Contact Us</h2>
+                <p>If you have any questions about these Terms, please contact us at support@heymanifestation.com.</p>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <a href="index.html" class="btn-primary">Back to Home Page</a>
+        </div>
+    </main>
 
-    <p><strong>Effective Date:</strong> January 1, 2024</p>
+    <footer class="bg-gray-900 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.about.title">369 Manifestation Method</h3>
+                    <p class="text-gray-400 mb-4" data-i18n="footer.about.text">Transforming lives through the power of the 369 manifestation method, inspired by Nikola Tesla's wisdom.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.features.title">Features</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.features.link1">Wish Setting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.features.link2">Writing Practice</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.features.link3">Progress Tracking</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.features.link4">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.resources.title">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.resources.link1">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.resources.link2">Success Stories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.resources.link3">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white" data-i18n="footer.resources.link4">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.language.title">Language</h3>
+                    <select id="footer-language-selector" class="bg-gray-800 text-white px-4 py-2 rounded-lg w-full">
+                        <option value="en" data-i18n="footer.language.english">English</option>
+                        <option value="zh" data-i18n="footer.language.chinese">中文</option>
+                        <option value="ja" data-i18n="footer.language.japanese">日本語</option>
+                        <option value="es" data-i18n="footer.language.spanish">Español</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm" data-i18n="footer.copyright"> 2023 369 Manifestation Method. All rights reserved.</p>
+                    <div class="flex flex-wrap gap-4 mt-4 md:mt-0">
+                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm" data-i18n="footer.cookies">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <h2>1. Introduction</h2>
-    <p>Welcome to our Mobile Simulator. By using our service, you agree to abide by the following terms and conditions...</p>
-
-    <h2>2. Use of Service</h2>
-    <p>Users must comply with all applicable laws when using our service. Unauthorized use or abuse of our service may result in penalties...</p>
-
-    <h2>3. Privacy Policy</h2>
-    <p>We respect your privacy and are committed to protecting your personal information. For more details, please refer to our Privacy Policy...</p>
-
-    <h2>4. User Responsibilities</h2>
-    <p>You are responsible for your actions while using our service. You agree not to engage in any activity that may harm the platform...</p>
-
-    <h2>5. Limitation of Liability</h2>
-    <p>We are not responsible for any damages or losses resulting from the use of our service. By continuing to use the service, you accept these terms...</p>
-
-    <h2>6. Changes to the Terms</h2>
-    <p>We may update these terms from time to time. Any changes will be posted on this page, and the updated terms will be effective immediately...</p>
-
-    <p>If you have any questions regarding these terms, feel free to contact us at support@yourwebsite.com.</p>
-  </div>
+    <script src="js/i18n.js"></script>
+    <script src="js/landing.js"></script>
 </body>
-
 </html>
+```
+
+``` locales/en.json
+{
+  "app": {
+    "title": "Manifest 369 to go",
+    "demoButton": "Open Full App Demo",
+    "tryNow": "Try Now"
+  },
+  "landing": {
+    "mainTitle": "Manifest Your Dreams with the 369 Method",
+    "subtitle": "A powerful manifestation technique combining the power of numbers and the law of attraction to help you achieve your desires",
+    "whatIs": "What is the 369 Method?",
+    "description": "The 369 method is a manifestation technique inspired by Nikola Tesla's belief in the power of 3, 6, and 9. Write your affirmation 3 times in the morning, 6 times in the afternoon, and 9 times in the evening to amplify your manifestation power.",
+    "viewApp": "View App Screenshots",
+    "trialButton": "Try the App",
+    "keyFeatures": "Key Features",
+    "appScreenshots": "App Screenshots",
+    "startJourney": "Start Your Manifestation Journey Today",
+    "journeyDesc": "Join thousands of people who have successfully manifested their dreams using the 369 method",
+    "startNow": "Start Now"
+  },
+  "hero": {
+    "title": "Transform Your Reality with the 369 Manifestation Method",
+    "subtitle": "Harness the cosmic power of numbers to manifest your dreams and transform your life in just minutes a day",
+    "startJourney": "Begin Your Journey",
+    "learnMore": "Learn How It Works",
+    "userCount": "Join 10,000+ people manifesting success"
+  },
+  "benefits": {
+    "title": "Manifest Your Dreams with Science-Backed Methods",
+    "subtitle": "The 369 method combines ancient numerology wisdom with modern neuroscience to reprogram your subconscious mind for success",
+    "card1": {
+      "title": "Daily Reminders",
+      "description": "Receive timely notifications to practice your affirmations consistently - morning, afternoon, and evening to maintain the perfect 3-6-9 rhythm"
+    },
+    "card2": {
+      "title": "Customized Affirmations",
+      "description": "Create personalized affirmations that resonate deeply with your specific goals and desires, making your practice more authentic and effective"
+    },
+    "card3": {
+      "title": "Progress Tracking",
+      "description": "Monitor your consistency and achievements with intuitive visual analytics, helping you stay motivated throughout your manifestation journey"
+    }
+  },
+  "howItWorks": {
+    "title": "How the 369 Method Powers Your Manifestation",
+    "subtitle": "A simple yet powerful daily practice that takes just minutes but transforms your reality",
+    "step1": {
+      "title": "Morning Ritual",
+      "description": "Write your affirmation 3 times in the morning to plant the seed in your subconscious"
+    },
+    "step2": {
+      "title": "Afternoon Power",
+      "description": "Write your affirmation 6 times in the afternoon to nurture your intention"
+    },
+    "step3": {
+      "title": "Evening Amplification",
+      "description": "Write your affirmation 9 times before bed to amplify the manifestation while you sleep"
+    },
+    "tryItNow": "Try It Now for Free"
+  },
+  "screenshots": {
+    "title": "Your Complete Manifestation Journey",
+    "subtitle": "Explore our intuitive app designed to guide you through every step of the 369 manifestation process"
+  },
+  "screens": {
+    "home": "Home Dashboard",
+    "wishSetting": "Wish Setting",
+    "writingPractice": "Writing Practice",
+    "progress": "Progress Tracking",
+    "community": "Community",
+    "profile": "Profile"
+  },
+  "comparison": {
+    "title": "How We Compare",
+    "subtitle": "See why the 369 Manifestation Method stands out from other manifestation apps",
+    "feature": "Feature",
+    "us": "369 Method",
+    "other1": "I Am",
+    "other2": "ThinkUp",
+    "other3": "17 Seconds",
+    "structured": "Structured Method",
+    "custom": "Customized Affirmations",
+    "community": "Community Support",
+    "progress": "Progress Tracking",
+    "free": "Free Version"
+  },
+  "issues": {
+    "title": "Common Issues with Manifestation Apps",
+    "subtitle": "How we've addressed the most frequent complaints about manifestation apps",
+    "cost": "High Cost",
+    "costSolution": "We offer a comprehensive free version with essential features, making manifestation accessible to everyone regardless of budget",
+    "tech": "Over-Reliance on Technology",
+    "techSolution": "Our app balances technology with authentic practice, focusing on emotional connection and belief while providing helpful structure",
+    "results": "Inconsistent Results",
+    "resultsSolution": "Our scientifically-backed 369 method provides clear structure and consistency, with proven success rates when followed correctly",
+    "generic": "Generic Content",
+    "genericSolution": "Our app lets you create fully personalized affirmations that resonate with your specific goals, not generic AI-generated content"
+  },
+  "testimonials": {
+    "title": "Success Stories from Our Community",
+    "subtitle": "Read how real people have transformed their lives using the 369 method",
+    "user1": {
+      "name": "Laura Chen",
+      "text": "\"After 45 days of consistent practice with the 369 method, I finally got my dream job! The process was incredible - I started by writing my affirmation 'I am thriving in my perfect career position' 3 times in the morning, 6 times in the afternoon, and 9 times before bed.\"",
+      "avatar": "Laura Chen's profile photo"
+    },
+    "user2": {
+      "name": "James Wilson",
+      "text": "\"I was skeptical at first, but decided to give the 369 method a try for my health goals. Within 33 days, I had established a consistent fitness routine and lost 15 pounds. The app's reminders and tracking features were essential to keeping me on track.\"",
+      "avatar": "James Wilson's profile photo"
+    },
+    "user3": {
+      "name": "Sarah Martinez",
+      "text": "\"The combination of visualization and the 369 method in this app is powerful. I manifested a reconciliation with my estranged sister after years of separation. I'm forever grateful for this method and how the app guided me through the process.\"",
+      "avatar": "Sarah Martinez's profile photo"
+    },
+    "readMore": "Read More Success Stories"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Get answers to common questions about the 369 manifestation method and our app",
+    "q1": "What is the 369 manifestation method?",
+    "a1": "The 369 method is a manifestation technique inspired by Nikola Tesla's belief in the power of 3, 6, and 9. You write your affirmation 3 times in the morning, 6 times in the afternoon, and 9 times in the evening to amplify your manifestation power.",
+    "q2": "How long does it take to see results?",
+    "a2": "Results vary for each person, but many users report significant shifts in their reality within 33-45 days of consistent practice. Some notice smaller changes even sooner. The key is consistency and belief in the process.",
+    "q3": "Do I need to use your app to practice the 369 method?",
+    "a3": "No, you can practice the 369 method with just pen and paper. However, our app provides structure, reminders, affirmation generation, progress tracking, and community support that significantly enhances your practice and improves consistency.",
+    "q4": "Is the free version enough to get started?",
+    "a4": "Absolutely! The free version includes all the essential features you need to practice the 369 method effectively. Premium features enhance your experience but aren't required for successful manifestation.",
+    "q5": "Can I manifest multiple wishes at once?",
+    "a5": "While you can work on multiple wishes, we recommend focusing on 1-3 wishes at a time for maximum effectiveness. This helps maintain focus and clarity in your manifestation practice.",
+    "founderStory": "Read Our Founder's Manifestation Journey"
+  },
+  "pricing": {
+    "title": "Choose Your Manifestation Journey",
+    "subtitle": "Select the perfect plan to transform your reality with the 369 method",
+    "mostPopular": "Most Popular",
+    "basic": {
+      "title": "Beginner",
+      "period": "Free",
+      "feature1": "Daily affirmation practice",
+      "feature2": "Basic progress tracking",
+      "feature3": "Community access (read-only)",
+      "feature4": "3 pre-written affirmations",
+      "cta": "Start Free"
+    },
+    "standard": {
+      "title": "Manifestor",
+      "period": "/month",
+      "feature1": "Everything in Free plan",
+      "feature2": "Unlimited custom affirmations",
+      "feature3": "Advanced progress analytics",
+      "feature4": "Full community participation",
+      "feature5": "AI-powered affirmation generator",
+      "cta": "Start 7-Day Trial"
+    },
+    "premium": {
+      "title": "Master Manifestor",
+      "period": "Lifetime",
+      "feature1": "Everything in Manifestor plan",
+      "feature2": "One-time payment, lifetime access",
+      "feature3": "VIP community group",
+      "feature4": "1-on-1 manifestation coaching",
+      "feature5": "Exclusive monthly masterclasses",
+      "cta": "Get Lifetime Access"
+    },
+    "guarantee": "100% Money-Back Guarantee for 30 Days",
+    "guaranteeText": "If you don't see meaningful results in your manifestation journey within 30 days, we'll refund your purchase - no questions asked."
+  },
+  "cta": {
+    "title": "Start Manifesting Your Dreams Today",
+    "text": "Join thousands of successful manifestors and transform your reality with the power of the 369 method. Your dream life is just 45 days away.",
+    "getStarted": "Start Your Journey Now",
+    "viewPlans": "View Our Plans",
+    "secure": "Secure Checkout - SSL Protected"
+  },
+  "footer": {
+    "about": {
+      "title": "369 Manifestation Method",
+      "text": "Transforming lives through the power of the 369 manifestation method, inspired by Nikola Tesla's wisdom."
+    },
+    "features": {
+      "title": "Features",
+      "link1": "Wish Setting",
+      "link2": "Writing Practice",
+      "link3": "Progress Tracking",
+      "link4": "Community"
+    },
+    "resources": {
+      "title": "Resources",
+      "link1": "Blog",
+      "link2": "Success Stories",
+      "link3": "FAQ",
+      "link4": "Support"
+    },
+    "language": {
+      "title": "Language",
+      "english": "English",
+      "chinese": "中文",
+      "japanese": "日本語",
+      "spanish": "Español"
+    },
+    "copyright": " 2023 369 Manifestation Method. All rights reserved.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies",
+    "affiliate": "This page contains affiliate links. We may earn a commission if you sign up through our links."
+  },
+  "meta": {
+    "description": "Manifest your dreams with the powerful 369 method",
+    "keywords": "manifestation, 369 method, law of attraction, manifesting, affirmations"
+  },
+  "features": {
+    "wishTitle": "Wish Setting & Affirmations",
+    "wishDesc": "Set your desires and get AI-generated positive affirmations that follow the 17-second rule.",
+    "writingTitle": "369 Writing Practice",
+    "writingDesc": "Get reminders for your writing practice in the morning, afternoon, and evening to complete the 3-6-9 cycle.",
+    "progressTitle": "Progress Tracking",
+    "progressDesc": "Track your practice with intuitive charts and set goals for 33 or 45 days of consistent practice."
+  },
+  "founderStory": {
+    "pageTitle": "My Manifestation Journey - 369 Manifestation Method",
+    "metaDescription": "My personal journey with manifestation and how it helped me overcome 38 years of self-blame",
+    "title": "My Manifestation Journey",
+    "subtitle": "How the 369 method helped me overcome 38 years of self-blame and inspired me to help others",
+    "founderName": "From the Founder",
+    "intro": "For 38 years, I carried the weight of self-blame on my shoulders. Every setback, every failure, every missed opportunity became another brick in the wall I built around myself. I was my own harshest critic, and this constant self-judgment left me feeling stuck, worthless, and powerless to change my circumstances.",
+    "discovery": "The Turning Point: Discovering Manifestation",
+    "discoveryText": "My turning point came when I discovered manifestation techniques, particularly the 369 method. At first, I was skeptical. How could simply writing affirmations change my deeply ingrained patterns of self-blame? But I was desperate for change, so I committed to trying it consistently for 45 days.",
+    "discoveryText2": "The affirmation I chose was simple: \"I am worthy of love and forgiveness, especially from myself.\" Three times in the morning, six times in the afternoon, and nine times before bed – I wrote these words faithfully, even on days when I didn't believe them.",
+    "transformation": "The Transformation",
+    "transformationText": "The change wasn't immediate, but it was profound. Around day 21, I noticed my internal dialogue beginning to shift. The voice of self-blame grew quieter, while a new voice – one of compassion and understanding – grew stronger. By day 45, I had experienced a fundamental shift in how I related to myself.",
+    "transformationText2": "This wasn't just positive thinking – it was a rewiring of deeply held beliefs. The 369 method had helped me create new neural pathways, ones that led to self-acceptance rather than self-destruction. For the first time in 38 years, I felt free from the prison of self-blame.",
+    "mission": "The Mission: Creating HeyManifestation.com",
+    "missionText": "My personal transformation sparked a mission: to make manifestation techniques accessible to everyone struggling with similar challenges. I founded HeyManifestation.com with a bold vision – to create 50 different manifestation apps, each addressing specific areas of life where people feel stuck or limited.",
+    "missionText2": "The 369 Manifestation Method app is the first of these 50 planned applications. I designed it to provide structure, accountability, and guidance – everything I wish I'd had when starting my own journey. The app combines ancient wisdom with modern technology to make manifestation practice simple, effective, and accessible.",
+    "invitation": "My Invitation to You",
+    "invitationText": "If you're carrying the weight of self-blame, limiting beliefs, or any other mental barriers that keep you from living your fullest life, I invite you to try the 369 method. Whether you use our app or simply a pen and paper, the consistent practice of rewriting your mental narrative can create profound change.",
+    "invitationText2": "And as I work toward my goal of creating 50 manifestation apps, I welcome your feedback, suggestions, and stories. Together, we can build tools that help more people break free from self-imposed limitations and step into their full potential.",
+    "closing": "With gratitude for being part of this journey,",
+    "signature": "The Founder of HeyManifestation.com",
+    "backToHome": "Back to Home Page"
+  },
+  "nav": {
+    "home": "Home",
+    "wishes": "Wishes",
+    "practice": "Practice",
+    "leaderboard": "Leaderboard",
+    "profile": "Profile",
+    "community": "Community",
+    "progress": "Progress",
+    "language": "Language"
+  },
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Sign in to continue your manifestation journey",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "orSignInWith": "Or sign in with",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "register": {
+    "title": "Start Your Journey",
+    "subtitle": "Create an account to begin manifesting your dreams",
+    "name": "Full Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Create a password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "terms": "I agree to the Terms of Service and Privacy Policy",
+    "signUp": "Sign Up",
+    "orSignUpWith": "Or sign up with",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign In"
+  },
+  "home": {
+    "title": "Dashboard",
+    "greeting": "Good Morning!",
+    "welcomeBack": "Welcome back to your manifestation journey.",
+    "streak": "Current Streak",
+    "days": "days",
+    "todayTasks": "Today's Tasks",
+    "todayProgress": "Today's Progress",
+    "april5": "April 5, 2023",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "continueWriting": "Continue Writing",
+    "yourAffirmations": "Your Affirmations",
+    "viewAll": "View All",
+    "career": "Career",
+    "health": "Health",
+    "completionRate": "33% Complete",
+    "communityHighlights": "Community Highlights",
+    "explore": "Explore",
+    "successStory": "Success Story"
+  },
+  "wishes": {
+    "title": "Wish Setting",
+    "createNew": "Create New Wish",
+    "category": "Category",
+    "career": "Career",
+    "health": "Health",
+    "relationship": "Relationship",
+    "finance": "Finance",
+    "personal": "Personal",
+    "enterWish": "Enter Your Wish",
+    "placeholder": "I want to...",
+    "voiceInput": "Voice Input",
+    "visualize": "Visualize",
+    "generateAffirmation": "Generate Affirmation",
+    "generatedAffirmation": "Generated Affirmation",
+    "regenerate": "Regenerate",
+    "edit": "Edit",
+    "practiceDuration": "Practice Duration",
+    "days33": "33 Days",
+    "days45": "45 Days",
+    "custom": "Custom",
+    "startPractice": "Start Practice",
+    "yourWishes": "Your Wishes",
+    "filter": "Filter",
+    "sort": "Sort",
+    "active": "Active",
+    "completed": "Completed",
+    "days": "days",
+    "practice": "Practice",
+    "viewResults": "View Results",
+    "communityAffirmations": "Community Affirmations",
+    "viewMore": "View More",
+    "addToDaily": "Add to Daily",
+    "affirmationSettings": "Affirmation Settings",
+    "reminderTimes": "Reminder Times",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "completionMethods": "Completion Methods",
+    "handwriting": "Handwriting",
+    "typing": "Typing",
+    "voice": "Voice",
+    "dailyLimit": "Daily Task Limit",
+    "freeLimit": "Free User Limit",
+    "tasks": "tasks",
+    "upgrade": "Upgrade",
+    "earnMore": "Ganar Más Tareas",
+    "watchAd": "Ver Anuncio",
+    "premiumRequired": "Se requiere acceso premium",
+    "save": "Guardar"
+  },
+  "practice": {
+    "title": "Writing Practice",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "currentAffirmation": "Current Affirmation",
+    "career": "Career",
+    "remaining": "Remaining",
+    "switchAffirmation": "Switch Affirmation",
+    "writingMethod": "Writing Method",
+    "handwriting": "Handwriting",
+    "typing": "Typing",
+    "handwritingArea": "Handwriting Area",
+    "writeHere": "Write your affirmation here",
+    "writingTools": "Writing Tools",
+    "complete": "Complete",
+    "tips": "Tips for Effective Practice",
+    "tip1": "Write with focused attention and positive emotion",
+    "tip2": "Visualize your desire while writing",
+    "tip3": "Maintain a feeling of gratitude as if your wish has already manifested",
+    "tip4": "Consistency is key - complete all 3 sessions each day"
+  },
+  "progress": {
+    "title": "Progress Tracking",
+    "overallProgress": "Overall Progress",
+    "streak": "Current Streak",
+    "days": "days",
+    "completion": "Completion Rate",
+    "today": "Today",
+    "activeAffirmations": "Active Affirmations Progress",
+    "filter": "Filter",
+    "career": "Career",
+    "health": "Health",
+    "complete": "complete",
+    "daysLeft": "21 days left",
+    "dailyCompletion": "Daily Completion Rate",
+    "completed": "Completed",
+    "partial": "Partial",
+    "missed": "Missed",
+    "achievementBadges": "Achievement Badges",
+    "viewAll": "View All",
+    "week1": "1 Week",
+    "week2": "2 Weeks",
+    "month1": "1 Month",
+    "complete45": "Complete 45",
+    "advancedStats": "Advanced Stats"
+  },
+  "community": {
+    "title": "Community",
+    "searchPlaceholder": "Search topics, groups, or users",
+    "allPosts": "All Posts",
+    "successStories": "Success Stories",
+    "discussion": "Discussion",
+    "tips": "Tips & Techniques",
+    "featuredPost": "Featured Post",
+    "featuredTitle": "How I Manifested My Dream Job in 45 Days",
+    "readMore": "Read More",
+    "recentPosts": "Recent Posts",
+    "viewAll": "View All",
+    "questionTitle": "Question about the 369 method timing",
+    "questionText": "Does anyone have tips for maintaining the practice when traveling across time zones? I'm struggling to keep my morning/afternoon/evening schedule consistent...",
+    "tipTitle": "Combine visualization with your 369 practice",
+    "tipText": "I've found that adding a 5-minute visualization session after writing my affirmations significantly amplifies the results. Here's my technique...",
+    "supportGroups": "Support Groups",
+    "findMore": "Find More",
+    "careerManifestors": "Career Manifestors",
+    "healthWellness": "Health & Wellness",
+    "relationships": "Relationships",
+    "members": "Members",
+    "join": "Join",
+    "successStory": "Success Story"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "yourPoints": "Your Points",
+    "earnPoints": "Like entries to earn more points!",
+    "redeem": "Redeem",
+    "thisWeek": "This Week",
+    "allTime": "All Time",
+    "successStories": "Success Stories",
+    "trending": "Trending",
+    "top3": "Top 3 Manifestors",
+    "otherEntries": "Other Top Manifestors",
+    "likeToEarn": "Me gusta para ganar 10 puntos",
+    "likeToEarn3": "Me gusta para ganar 3 puntos",
+    "likeToEarn2": "Me gusta para ganar 2 puntos",
+    "redeemPoints": "Redeem Your Points",
+    "pointsExplainer": "Your points can be redeemed for premium membership trial cards and other benefits.",
+    "7dayTrial": "7-Day Premium Trial",
+    "7dayDesc": "Unlock all premium features for a week",
+    "30dayTrial": "30-Day Premium Trial",
+    "30dayDesc": "A full month of premium access",
+    "customAffirmation": "Custom Affirmation Pack",
+    "customDesc": "5 personalized affirmations created for you"
+  },
+  "profile": {
+    "title": "Profile",
+    "streak": "Day Streak",
+    "activeWishes": "Active Wishes",
+    "manifestations": "Manifestations",
+    "bio": "Passionate about using the law of attraction to create positive change in my life. Love sharing my journey with like-minded manifestors!",
+    "editProfile": "Edit Profile",
+    "appSettings": "App Settings",
+    "notifications": "Notifications",
+    "darkMode": "Dark Mode",
+    "language": "Language",
+    "reminderTimes": "Reminder Times",
+    "customize": "Customize",
+    "manifestationHistory": "Manifestation History",
+    "viewAll": "View All",
+    "healthImprovement": "Health Improvement",
+    "completed": "Completed: March 15, 2023",
+    "relationshipHealing": "Relationship Healing",
+    "supportFeedback": "Support & Feedback",
+    "helpCenter": "Help Center",
+    "rateApp": "Rate the App",
+    "sendFeedback": "Send Feedback",
+    "inviteFriends": "Invite Friends",
+    "signOut": "Sign Out",
+    "dailyTasks": "Daily Tasks",
+    "method": "Method",
+    "handwriting": "Handwriting",
+    "typing": "Typing",
+    "voice": "Voice",
+    "taskCount": "Task Count",
+    "upgrade": "Upgrade",
+    "forUnlimited": "for unlimited"
+  },
+  "onboarding": {
+    "slide1": {
+      "title": "Welcome to 369 Manifestation",
+      "text": "Transform your reality with the power of numbers and consistent practice."
+    },
+    "slide2": {
+      "morning": "Morning Ritual",
+      "morningText": "Write your affirmation 3 times in the morning to plant the seed in your subconscious.",
+      "afternoon": "Afternoon Power",
+      "afternoonText": "Write your affirmation 6 times in the afternoon to nurture your intention.",
+      "evening": "Evening Amplification",
+      "eveningText": "Write your affirmation 9 times before bed to amplify your manifestation."
+    },
+    "slide3": {
+      "title": "Track Your Progress",
+      "text": "Watch your manifestation journey unfold with detailed analytics and insights.",
+      "daysRemaining": "days remaining"
+    },
+    "slide4": {
+      "title": "You're Not Alone",
+      "text": "Connect with thousands of manifestors on the same journey and share your success.",
+      "join": "Únete a Nuestra Comunidad"
+    },
+    "skip": "Omitir",
+    "next": "Siguiente",
+    "getStarted": "Comenzar"
+  },
+  "paywall": {
+    "title": "Desbloquea Todo Tu Potencial",
+    "subtitle": "Elige el plan perfecto para acelerar tu viaje de manifestación",
+    "feature1": "Afirmaciones y deseos ilimitados",
+    "feature2": "Seguimiento avanzado de progreso",
+    "feature3": "Generador de afirmaciones con IA",
+    "feature4": "Participación completa en comunidad",
+    "feature5": "Sin anuncios, experiencia de manifestación pura",
+    "monthly": {
+      "title": "Mensual",
+      "subtitle": "Perfecto para comenzar tu viaje",
+      "period": "por mes"
+    },
+    "annual": {
+      "title": "Anual",
+      "subtitle": "Ahorra 50% con facturación anual",
+      "period": "por año"
+    },
+    "lifetime": {
+      "title": "De por Vida",
+      "subtitle": "Pago único",
+      "period": "pago único"
+    },
+    "bestValue": "MEJOR VALOR",
+    "startTrial": "Comenzar Prueba Gratuita de 7 Días",
+    "selectMonthly": "Comenzar Prueba Gratuita de 7 Días",
+    "selectAnnual": "Seleccionar Plan Anual",
+    "selectLifetime": "Obtener Acceso De Por Vida",
+    "guarantee": "Garantía de devolución de dinero de 30 días, sin preguntas.",
+    "testimonial": "Las funciones premium me ayudaron a manifestar mi trabajo soñado en solo 33 días! Las herramientas de seguimiento marcaron toda la diferencia para mantener la consistencia.",
+    "testimonialName": "— Emily Johnson",
+    "terms": "Al continuar, aceptas nuestros Términos de Servicio y Política de Privacidad.",
+    "continueFree": "Continuar con versión gratuita limitada"
+  },
+  "statistics": {
+    "title": "Estadísticas",
+    "totalMindPower": "Poder Mental Total",
+    "affirmationsWritten": "Afirmaciones Escritas",
+    "totalManifestations": "Manifestaciones Totales",
+    "manifestationRate": "Tasa de Manifestación",
+    "energyDistribution": "Distribución de Energía de Manifestación",
+    "career": "Carrera",
+    "health": "Salud",
+    "relationships": "Relaciones",
+    "finance": "Finanzas",
+    "monthlyConsistency": "Consistencia Mensual",
+    "april": "Abril",
+    "mon": "Lun",
+    "tue": "Mar",
+    "wed": "Mié",
+    "thu": "Jue",
+    "fri": "Vie",
+    "sat": "Sáb",
+    "sun": "Dom",
+    "completed": "Completado",
+    "partial": "Parcial",
+    "missed": "Perdido",
+    "monthlyRate": "Tasa Mensual",
+    "timeAnalysis": "Análisis de Tiempo del Día",
+    "timeInsight": "Tu práctica nocturna tiene la mayor tasa de finalización. Considera establecer recordatorios más fuertes para la tarde.",
+    "wordCloud": "Tu nube de palabras de afirmación",
+    "wordInsight": "Las palabras en las que más te enfocas revelan tus prioridades de manifestación. \"Abundancia\" y \"Éxito\" son tus temas más frecuentes.",
+    "manifestationTimeline": "Línea de Tiempo de Manifestación",
+    "firstManifestation": "Mejora de Salud",
+    "firstManifestationDate": "Completado el 15 de Marzo, 2023",
+    "firstManifestationTime": "33 días desde inicio hasta manifestación",
+    "secondManifestation": "Sanación de Relación",
+    "secondManifestationDate": "Completado el 20 de Febrero, 2023",
+    "secondManifestationTime": "45 días desde inicio hasta manifestación",
+    "thirdManifestation": "Impulso Financiero",
+    "thirdManifestationDate": "Completado el 10 de Enero, 2023",
+    "thirdManifestationTime": "38 días desde inicio hasta manifestación",
+    "aiInsights": "Insights Impulsados por IA",
+    "insight1": "Tu consistencia en 93% es excepcional. La mayoría de los manifestadores exitosos mantienen por encima del 85%.",
+    "insight2": "Tu práctica de la tarde muestra una caída en consistencia. Establecer un recordatorio de hora de almuerzo podría ayudar.",
+    "insight3": "Tu tiempo promedio de manifestación es 38.7 días, que es 14% más rápido que el usuario promedio."
+  }
+}
+
+
+```
+</plan>

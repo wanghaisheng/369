@@ -160,9 +160,9 @@
                     <i class="fas fa-pencil-alt"></i>
                     <span data-i18n="nav.practice">Practice</span>
                 </a>
-                <a href="community.html" class="bottom-nav-item">
-                    <i class="fas fa-users"></i>
-                    <span data-i18n="nav.community">Community</span>
+                <a href="leaderboard.html" class="bottom-nav-item">
+                    <i class="fas fa-trophy"></i>
+                    <span data-i18n="nav.leaderboard">Leaderboard</span>
                 </a>
                 <a href="profile.html" class="bottom-nav-item">
                     <i class="fas fa-user"></i>
@@ -173,6 +173,44 @@
     </div>
 
     <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // No bottom navigation in this view since it's a focused task
+            // Instead, add back button to return to previous screen
+            
+            // Complete button redirects back to home
+            const completeBtn = document.querySelector('[data-i18n="practice.complete"]');
+            if (completeBtn) {
+                completeBtn.addEventListener('click', function() {
+                    // Save progress
+                    // In a real app, we'd store the user's progress here
+                    
+                    // Show completion modal
+                    const modal = document.createElement('div');
+                    modal.classList.add('fixed', 'inset-0', 'flex', 'items-center', 'justify-center', 'bg-black', 'bg-opacity-50', 'z-50');
+                    modal.innerHTML = `
+                        <div class="bg-white rounded-xl p-6 m-4 max-w-sm">
+                            <div class="text-center mb-4">
+                                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-check text-green-600 text-2xl"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800">Great job!</h3>
+                                <p class="text-gray-600">Your practice has been completed for this session.</p>
+                            </div>
+                            <button class="w-full bg-purple-600 text-white py-2.5 rounded-lg font-medium">Continue</button>
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                    
+                    // Add event listener to the continue button
+                    modal.querySelector('button').addEventListener('click', function() {
+                        // Remove modal and go back
+                        modal.remove();
+                        window.location.href = 'home.html';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-

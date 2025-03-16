@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/gamified.css" rel="stylesheet">
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <!-- Onboarding Slides -->
+            <div id="onboarding-slides" class="relative w-full h-full">
+                <!-- Slide 1 -->
+                <div class="onboarding-slide absolute inset-0 flex flex-col items-center justify-center px-6 transition-opacity duration-500">
+                    <div class="relative w-52 h-52 mb-12">
+                        <div class="absolute inset-0 bg-purple-600 rounded-full opacity-10 animate-pulse"></div>
+                        <div class="absolute inset-4 bg-purple-600 rounded-full opacity-20 animate-pulse animation-delay-300"></div>
+                        <div class="absolute inset-8 bg-purple-600 rounded-full opacity-30 animate-pulse animation-delay-600"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-brain text-purple-600 text-7xl"></i>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold text-purple-900 mb-6 text-center" data-i18n="onboarding.slide1.title">Welcome to 369 Manifestation</h1>
+                    <p class="text-gray-600 text-center mb-8" data-i18n="onboarding.slide1.text">Transform your reality with the power of numbers and consistent practice.</p>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="onboarding-slide absolute inset-0 flex flex-col items-center justify-center px-6 transition-opacity duration-500 opacity-0">
+                    <div class="flex flex-col items-center mb-8">
+                        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 mb-4">
+                            <div class="text-2xl font-bold text-purple-600">3</div>
+                        </div>
+                        <h2 class="text-xl font-bold text-purple-900 mb-2" data-i18n="onboarding.slide2.morning">Morning Ritual</h2>
+                        <p class="text-gray-600 text-center" data-i18n="onboarding.slide2.morningText">Write your affirmation 3 times in the morning to plant the seed in your subconscious.</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center mb-8">
+                        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 mb-4">
+                            <div class="text-2xl font-bold text-purple-600">6</div>
+                        </div>
+                        <h2 class="text-xl font-bold text-purple-900 mb-2" data-i18n="onboarding.slide2.afternoon">Afternoon Power</h2>
+                        <p class="text-gray-600 text-center" data-i18n="onboarding.slide2.afternoonText">Write your affirmation 6 times in the afternoon to nurture your intention.</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 mb-4">
+                            <div class="text-2xl font-bold text-purple-600">9</div>
+                        </div>
+                        <h2 class="text-xl font-bold text-purple-900 mb-2" data-i18n="onboarding.slide2.evening">Evening Amplification</h2>
+                        <p class="text-gray-600 text-center" data-i18n="onboarding.slide2.eveningText">Write your affirmation 9 times before bed to amplify your manifestation.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="onboarding-slide absolute inset-0 flex flex-col items-center justify-center px-6 transition-opacity duration-500 opacity-0">
+                    <div class="relative w-64 h-64 mb-8">
+                        <svg class="w-full h-full" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#f3f4f6" stroke-width="8"/>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#8b5cf6" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="70" transform="rotate(-90 50 50)"/>
+                            <text x="50" y="55" text-anchor="middle" font-size="20" font-weight="bold" fill="#8b5cf6">75%</text>
+                        </svg>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border-4 border-purple-100 flex items-center justify-center">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-purple-600">33</div>
+                                <div class="text-gray-500" data-i18n="onboarding.slide3.daysRemaining">days remaining</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold text-purple-900 mb-6 text-center" data-i18n="onboarding.slide3.title">Track Your Progress</h1>
+                    <p class="text-gray-600 text-center mb-8" data-i18n="onboarding.slide3.text">Watch your manifestation journey unfold with detailed analytics and insights.</p>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="onboarding-slide absolute inset-0 flex flex-col items-center justify-center px-6 transition-opacity duration-500 opacity-0">
+                    <div class="relative w-64 h-64 mb-8 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-purple-100 rounded-full"></div>
+                        <div class="relative z-10 text-center">
+                            <i class="fas fa-users text-purple-600 text-6xl mb-4"></i>
+                            <div class="text-2xl font-bold text-purple-900" data-i18n="onboarding.slide4.join">Join Our Community</div>
+                        </div>
+                    </div>
+                    <h1 class="text-3xl font-bold text-purple-900 mb-6 text-center" data-i18n="onboarding.slide4.title">You're Not Alone</h1>
+                    <p class="text-gray-600 text-center mb-8" data-i18n="onboarding.slide4.text">Connect with thousands of manifestors on the same journey and share your success.</p>
+                </div>
+
+                <!-- Navigation Dots -->
+                <div class="absolute bottom-28 left-0 right-0 flex justify-center space-x-2">
+                    <button class="nav-dot w-3 h-3 rounded-full bg-purple-600" data-slide="0"></button>
+                    <button class="nav-dot w-3 h-3 rounded-full bg-gray-300" data-slide="1"></button>
+                    <button class="nav-dot w-3 h-3 rounded-full bg-gray-300" data-slide="2"></button>
+                    <button class="nav-dot w-3 h-3 rounded-full bg-gray-300" data-slide="3"></button>
+                </div>
+
+                <!-- Next/Skip Buttons -->
+                <div class="absolute bottom-12 left-0 right-0 flex justify-between px-6">
+                    <button id="skip-btn" class="text-purple-600 font-medium" data-i18n="onboarding.skip">Skip</button>
+                    <button id="next-btn" class="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium" data-i18n="onboarding.next">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.onboarding-slide');
+            const navDots = document.querySelectorAll('.nav-dot');
+            const nextBtn = document.getElementById('next-btn');
+            const skipBtn = document.getElementById('skip-btn');
+            let currentSlide = 0;
+            
+            // Initialize
+            updateSlideDisplay();
+            
+            // Event listeners
+            nextBtn.addEventListener('click', function() {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    updateSlideDisplay();
+                } else {
+                    // On last slide, go to paywall
+                    window.location.href = 'paywall.html';
+                }
+            });
+            
+            skipBtn.addEventListener('click', function() {
+                window.location.href = 'paywall.html';
+            });
+            
+            navDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    currentSlide = parseInt(this.getAttribute('data-slide'));
+                    updateSlideDisplay();
+                });
+            });
+            
+            function updateSlideDisplay() {
+                // Update slides
+                slides.forEach((slide, index) => {
+                    if (index === currentSlide) {
+                        slide.classList.remove('opacity-0');
+                    } else {
+                        slide.classList.add('opacity-0');
+                    }
+                });
+                
+                // Update navigation dots
+                navDots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.remove('bg-gray-300');
+                        dot.classList.add('bg-purple-600');
+                    } else {
+                        dot.classList.remove('bg-purple-600');
+                        dot.classList.add('bg-gray-300');
+                    }
+                });
+                
+                // Update button text on last slide
+                if (currentSlide === slides.length - 1) {
+                    nextBtn.textContent = document.querySelector('[data-i18n="onboarding.getStarted"]') 
+                        ? document.querySelector('[data-i18n="onboarding.getStarted"]').textContent 
+                        : 'Get Started';
+                } else {
+                    nextBtn.textContent = document.querySelector('[data-i18n="onboarding.next"]') 
+                        ? document.querySelector('[data-i18n="onboarding.next"]').textContent 
+                        : 'Next';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

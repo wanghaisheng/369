@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "369显化方法",
+    "title": "Manifest 369 to go",
     "demoButton": "打开完整应用演示"
   },
   "landing": {
@@ -33,14 +33,16 @@
     "profile": "个人资料"
   },
   "footer": {
-    "copyright": "© 2023 版权所有"
+    "copyright": " 2023 版权所有"
   },
   "nav": {
     "home": "主页",
     "wishes": "愿望",
     "practice": "练习",
     "community": "社区",
-    "profile": "我的"
+    "profile": "我的",
+    "leaderboard": "排行榜",
+    "progress": "进度"
   },
   "home": {
     "title": "控制面板",
@@ -93,7 +95,26 @@
     "completed": "已完成",
     "days": "天",
     "practice": "练习",
-    "viewResults": "查看结果"
+    "viewResults": "查看结果",
+    "communityAffirmations": "社区肯定句",
+    "viewMore": "查看更多",
+    "addToDaily": "添加到每日任务",
+    "affirmationSettings": "肯定句设置",
+    "reminderTimes": "提醒时间",
+    "morning": "早上",
+    "afternoon": "下午",
+    "evening": "晚上",
+    "completionMethods": "完成方式",
+    "handwriting": "手写",
+    "typing": "打字",
+    "voice": "语音",
+    "dailyLimit": "每日任务限制",
+    "freeLimit": "免费用户限制",
+    "tasks": "任务",
+    "upgrade": "升级",
+    "earnMore": "获取更多任务",
+    "watchAd": "观看广告",
+    "premiumRequired": "需要高级会员权限"
   },
   "practice": {
     "title": "书写练习",
@@ -139,7 +160,8 @@
     "week1": "1周",
     "week2": "2周",
     "month1": "1个月",
-    "complete45": "完成45天"
+    "complete45": "完成45天",
+    "advancedStats": "高级统计"
   },
   "community": {
     "title": "社区",
@@ -189,7 +211,172 @@
     "rateApp": "评价应用",
     "sendFeedback": "发送反馈",
     "inviteFriends": "邀请好友",
-    "signOut": "退出登录"
+    "signOut": "退出登录",
+    "dailyTasks": "每日任务",
+    "method": "方法",
+    "handwriting": "手写",
+    "typing": "打字",
+    "voice": "语音",
+    "taskCount": "任务数量",
+    "upgrade": "升级",
+    "forUnlimited": "获取无限任务"
+  },
+  "leaderboard": {
+    "title": "排行榜",
+    "yourPoints": "你的积分",
+    "earnPoints": "给条目点赞以获取更多积分！",
+    "redeem": "兑换",
+    "thisWeek": "本周",
+    "allTime": "总榜",
+    "successStories": "成功案例",
+    "trending": "热门",
+    "top3": "前3名显化大师",
+    "otherEntries": "其他优秀显化者",
+    "likeToEarn": "点赞获得10积分",
+    "likeToEarn3": "点赞获得3积分",
+    "likeToEarn2": "点赞获得2积分",
+    "redeemPoints": "兑换你的积分",
+    "pointsExplainer": "你的积分可以兑换高级会员体验卡和其他福利。",
+    "7dayTrial": "7天高级会员体验",
+    "7dayDesc": "一周内解锁所有高级功能",
+    "30dayTrial": "30天高级会员体验",
+    "30dayDesc": "一整月的高级会员访问权限",
+    "customAffirmation": "定制肯定句套装",
+    "customDesc": "为你创建5条个性化肯定句"
+  },
+  "onboarding": {
+    "slide1": {
+      "title": "欢迎使用369显化方法",
+      "text": "通过数字力量和持续练习改变你的现实。"
+    },
+    "slide2": {
+      "morning": "晨间仪式",
+      "morningText": "早上写3次肯定句，在潜意识中播下种子。",
+      "afternoon": "午间力量",
+      "afternoonText": "下午写6次肯定句，培养你的意图。",
+      "evening": "晚间放大",
+      "eveningText": "睡前写9次肯定句，放大你的显化效果。"
+    },
+    "slide3": {
+      "title": "追踪你的进度",
+      "text": "通过详细分析和见解观察你的显化之旅。",
+      "daysRemaining": "剩余天数"
+    },
+    "slide4": {
+      "title": "你并不孤单",
+      "text": "与成千上万的显化者一起分享成功经验。",
+      "join": "加入我们的社区"
+    },
+    "skip": "跳过",
+    "next": "下一步",
+    "getStarted": "开始使用"
+  },
+  "paywall": {
+    "title": "释放你的全部潜能",
+    "subtitle": "选择完美的计划加速你的显化之旅",
+    "feature1": "无限制的肯定句和愿望",
+    "feature2": "高级进度追踪",
+    "feature3": "AI驱动的肯定句生成器",
+    "feature4": "完整的社区参与",
+    "feature5": "无广告，纯粹的显化体验",
+    "monthly": {
+      "title": "月度订阅",
+      "subtitle": "开始你旅程的完美选择",
+      "period": "每月"
+    },
+    "annual": {
+      "title": "年度订阅",
+      "subtitle": "年付节省50%",
+      "period": "每年"
+    },
+    "lifetime": {
+      "title": "终身订阅",
+      "subtitle": "一次性付款",
+      "period": "一次付清"
+    },
+    "bestValue": "最佳价值",
+    "startTrial": "开始7天免费试用",
+    "selectMonthly": "开始7天免费试用",
+    "selectAnnual": "选择年度计划",
+    "selectLifetime": "获取终身访问权",
+    "guarantee": "30天无条件退款保证。",
+    "testimonial": "高级功能帮助我在仅33天内显化了我的梦想工作！追踪工具对保持一致性起到了决定性的作用。",
+    "testimonialName": "— Emily Johnson",
+    "terms": "继续使用即表示你同意我们的服务条款和隐私政策。",
+    "continueFree": "继续使用有限的免费版本"
+  },
+  "statistics": {
+    "title": "统计数据",
+    "totalMindPower": "总心灵能量",
+    "affirmationsWritten": "已写肯定句",
+    "totalManifestations": "总显化数",
+    "manifestationRate": "显化率",
+    "energyDistribution": "显化能量分布",
+    "career": "事业",
+    "health": "健康",
+    "relationships": "人际关系",
+    "finance": "财务",
+    "monthlyConsistency": "月度一致性",
+    "april": "四月",
+    "mon": "周一",
+    "tue": "周二",
+    "wed": "周三",
+    "thu": "周四",
+    "fri": "周五",
+    "sat": "周六",
+    "sun": "周日",
+    "completed": "已完成",
+    "partial": "部分完成",
+    "missed": "未完成",
+    "monthlyRate": "月度率",
+    "timeAnalysis": "一天中的时间分析",
+    "timeInsight": "你的晚间练习有最高的完成率。考虑设置更强的下午提醒。",
+    "wordCloud": "你的肯定句词云",
+    "wordInsight": "你最关注的词揭示了你的显化优先事项。\"丰盛\"和\"成功\"是你最常用的主题。",
+    "manifestationTimeline": "显化时间线",
+    "firstManifestation": "健康改善",
+    "firstManifestationDate": "2023年3月15日完成",
+    "firstManifestationTime": "从开始到显化33天",
+    "secondManifestation": "关系修复",
+    "secondManifestationDate": "2023年2月20日完成",
+    "secondManifestationTime": "从开始到显化45天",
+    "thirdManifestation": "财务提升",
+    "thirdManifestationDate": "2023年1月10日完成",
+    "thirdManifestationTime": "从开始到显化38天",
+    "aiInsights": "AI驱动的见解",
+    "insight1": "你的一致性在93%是非常出色的。大多数成功的显化者保持在85%以上。",
+    "insight2": "你的下午练习显示一致性下降。设置午休提醒可能会有所帮助。",
+    "insight3": "你的平均显化时间是38.7天，比平均用户快14%。"
+  },
+  "login": {
+    "title": "欢迎回来",
+    "subtitle": "登录以继续您的显化之旅",
+    "email": "电子邮箱",
+    "emailPlaceholder": "输入您的邮箱",
+    "password": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "rememberMe": "记住我",
+    "forgotPassword": "忘记密码？",
+    "signIn": "登录",
+    "orSignInWith": "或通过以下方式登录",
+    "noAccount": "还没有账号？",
+    "signUp": "注册"
+  },
+  "register": {
+    "title": "开始您的旅程",
+    "subtitle": "创建账号以开始显化您的梦想",
+    "name": "全名",
+    "namePlaceholder": "输入您的姓名",
+    "email": "电子邮箱",
+    "emailPlaceholder": "输入您的邮箱",
+    "password": "密码",
+    "passwordPlaceholder": "创建密码",
+    "confirmPassword": "确认密码",
+    "confirmPasswordPlaceholder": "确认您的密码",
+    "terms": "我同意服务条款和隐私政策",
+    "signUp": "注册",
+    "orSignUpWith": "或通过以下方式注册",
+    "haveAccount": "已有账号？",
+    "signIn": "登录"
   }
 }
-

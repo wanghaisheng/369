@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n Key Updater</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #6b46c1;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .tool-description {
+            background-color: #f8f9fa;
+            border-left: 4px solid #6b46c1;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background-color: #f0fff4;
+            border: 1px solid #c6f6d5;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .button-container {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #6b46c1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #553c9a;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        .log-container {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .log-entry {
+            margin-bottom: 5px;
+        }
+        .log-error {
+            color: #e53e3e;
+        }
+        .log-success {
+            color: #38a169;
+        }
+        .log-info {
+            color: #3182ce;
+        }
+        #download-container {
+            margin-top: 30px;
+        }
+        .locale-file-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        .json-preview {
+            max-height: 300px;
+            overflow: auto;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+        .download-link {
+            display: inline-block;
+            background-color: #6b46c1;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .download-link:hover {
+            background-color: #553c9a;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab.active {
+            background-color: #6b46c1;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 0 5px 5px 5px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>i18n Key Updater</h1>
+    
+    <div class="tool-description">
+        <p>This tool helps you automatically update locale JSON files with missing i18n keys by:</p>
+        <ul>
+            <li>Taking scan results from the i18n Key Scanner</li>
+            <li>Generating properly structured JSON with missing keys</li>
+            <li>Merging the missing keys with existing locale files</li>
+            <li>Saving the updated locale files directly</li>
+        </ul>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" data-tab="scan">Scan & Update</div>
+        <div class="tab" data-tab="manual">Manual Update</div>
+    </div>
+
+    <div id="scan-tab" class="tab-content active">
+        <div class="instructions">
+            <h2>How to Use:</h2>
+            <ol>
+                <li>Configure the scan settings below or use the defaults.</li>
+                <li>Click the "Run Key Scanner" to identify missing keys.</li>
+                <li>Then, click the "Update Locale Files" button.</li>
+                <li>The tool will automatically add all missing keys to your locale files.</li>
+                <li>Backups of your original files will be created before making changes.</li>
+                <li>Updated locale files will be available for download.</li>
+            </ol>
+            <p><strong>Note:</strong> By default, the scanner will look for HTML files in the same directory as this tool and locale files in the "locale" subfolder.</p>
+        </div>
+
+        <div class="config-section">
+            <h3>Scan Configuration:</h3>
+            <div class="form-group">
+                <label for="scan-path">HTML Files Path:</label>
+                <input type="text" id="scan-path" placeholder="Path to scan for HTML files" value="./">
+                <button id="browse-scan-path">Browse</button>
+            </div>
+            <div class="form-group">
+                <label for="locale-path">Locale Files Path:</label>
+                <input type="text" id="locale-path" placeholder="Path to locale files" value="./locales">
+                <button id="browse-locale-path">Browse</button>
+            </div>
+            <div class="form-group">
+                <label for="file-pattern">File Pattern:</label>
+                <input type="text" id="file-pattern" placeholder="*.html" value="*.html">
+                <span class="help-text">Use comma to separate multiple patterns (e.g., *.html, *.js)</span>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="run-scanner">Run Key Scanner</button>
+            <button id="update-files">Update Locale Files</button>
+            <button id="clear-results">Clear Results</button>
+        </div>
+    </div>
+
+    <div id="manual-tab" class="tab-content">
+        <div class="instructions">
+            <h2>Manual Key Update:</h2>
+            <p>Use this option to manually add specific keys to your locale files:</p>
+            <ol>
+                <li>Enter the key path (e.g., "nav.language" or "pricing.basic.title").</li>
+                <li>Enter the English value for this key.</li>
+                <li>Optionally enter the Chinese value (if left empty, it will be marked for translation).</li>
+                <li>Click "Add Key" to add it to the pending changes.</li>
+                <li>When finished adding keys, click "Apply Changes" to update the locale files.</li>
+            </ol>
+        </div>
+
+        <div class="form-container">
+            <div class="form-group">
+                <label for="key-path">Key Path:</label>
+                <input type="text" id="key-path" placeholder="e.g., nav.language">
+            </div>
+            <div class="form-group">
+                <label for="en-value">English Value:</label>
+                <input type="text" id="en-value" placeholder="English text">
+            </div>
+            <div class="form-group">
+                <label for="zh-value">Chinese Value (optional):</label>
+                <input type="text" id="zh-value" placeholder="Chinese text (optional)">
+            </div>
+            <button id="add-key">Add Key</button>
+        </div>
+
+        <div id="pending-changes">
+            <h3>Pending Changes:</h3>
+            <div id="pending-list"></div>
+            <button id="apply-changes" disabled>Apply Changes</button>
+        </div>
+    </div>
+
+    <div id="results">
+        <h2>Results:</h2>
+        <div class="log-container" id="log-output"></div>
+    </div>
+
+    <div id="download-container">
+        <!-- Download links will be added here -->
+    </div>
+
+    <!-- Load the i18n key scanner and updater scripts -->
+    <script src="js/i18n-key-scanner.js"></script>
+    <script src="js/i18n-key-updater.js"></script>
+    
+    <script>
+        // Override console.log to display in our UI
+        const logOutput = document.getElementById('log-output');
+        const originalConsoleLog = console.log;
+        const originalConsoleError = console.error;
+
+        console.log = function() {
+            // Call the original console.log
+            originalConsoleLog.apply(console, arguments);
+            
+            // Add to our UI
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry log-info';
+            logEntry.textContent = Array.from(arguments).join(' ');
+            logOutput.appendChild(logEntry);
+            
+            // Auto-scroll to bottom
+            logOutput.scrollTop = logOutput.scrollHeight;
+        };
+
+        console.error = function() {
+            // Call the original console.error
+            originalConsoleError.apply(console, arguments);
+            
+            // Add to our UI
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry log-error';
+            logEntry.textContent = Array.from(arguments).join(' ');
+            logOutput.appendChild(logEntry);
+            
+            // Auto-scroll to bottom
+            logOutput.scrollTop = logOutput.scrollHeight;
+        };
+
+        // Tab switching functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                document.getElementById(`${this.dataset.tab}-tab`).classList.add('active');
+            });
+        });
+
+        // Global variables to store scan results
+        let scanResults = {
+            missingKeys: null,
+            localeData: null
+        };
+
+        // Button event handlers
+        document.getElementById('run-scanner').addEventListener('click', function() {
+            // Clear previous results
+            logOutput.innerHTML = '';
+            document.getElementById('download-container').innerHTML = '';
+            
+            // Log start message
+            console.log('Starting i18n Key Scanner Tool...');
+            
+            // Get configuration values
+            const scanPath = document.getElementById('scan-path').value.trim() || './';
+            const localePath = document.getElementById('locale-path').value.trim() || './locales';
+            const filePattern = document.getElementById('file-pattern').value.trim() || '*.html';
+            
+            // Run the scanner with configuration
+            runScanner({
+                scanPath: scanPath,
+                localePath: localePath,
+                filePattern: filePattern
+            }).then(results => {
+                if (results) {
+                    scanResults = results;
+                    console.log('Scan completed. Ready to update locale files.');
+                }
+            });
+        });
+    
+        // Browse button handlers
+        document.getElementById('browse-scan-path').addEventListener('click', function() {
+            // For demonstration, we'll just show an alert
+            alert('In a real implementation, this would open a folder selection dialog.\n\nDue to browser security restrictions, direct folder selection requires server-side code or the File System Access API (which is not widely supported yet).\n\nPlease manually enter the path for now.');
+        });
+        
+        document.getElementById('browse-locale-path').addEventListener('click', function() {
+            // For demonstration, we'll just show an alert
+            alert('In a real implementation, this would open a folder selection dialog.\n\nDue to browser security restrictions, direct folder selection requires server-side code or the File System Access API (which is not widely supported yet).\n\nPlease manually enter the path for now.');
+        });
+        
+        document.getElementById('update-files').addEventListener('click', function() {
+            if (!scanResults.missingKeys || !scanResults.localeData) {
+                console.error('No scan results available. Please run the scanner first.');
+                return;
+            }
+            
+            // Get locale path for updating
+            const localePath = document.getElementById('locale-path').value.trim() || './locales';
+            
+            console.log('Starting i18n Key Updater Tool...');
+            runUpdater(scanResults.missingKeys, scanResults.localeData, localePath);
+        });
+    </script>
+        
+        document.getElementById('clear-results').addEventListener('click', function() {
+            logOutput.innerHTML = '';
+            document.getElementById('download-container').innerHTML = '';
+            console.log('Results cleared');
+        });
+
+        // Manual key addition functionality
+        const pendingChanges = [];
+        
+        document.getElementById('add-key').addEventListener('click', function() {
+            const keyPath = document.getElementById('key-path').value.trim();
+            const enValue = document.getElementById('en-value').value.trim();
+            const zhValue = document.getElementById('zh-value').value.trim();
+            
+            if (!keyPath || !enValue) {
+                console.error('Key path and English value are required.');
+                return;
+            }
+            
+            // Add to pending changes
+            pendingChanges.push({
+                key: keyPath,
+                en: enValue,
+                zh: zhValue || `[TRANSLATE] ${enValue}`
+            });
+            
+            // Update UI
+            updatePendingList();
+            
+            // Clear form
+            document.getElementById('key-path').value = '';
+            document.getElementById('en-value').value = '';
+            document.getElementById('zh-value').value = '';
+        });
+        
+        document.getElementById('apply-changes').addEventListener('click', function() {
+            if (pendingChanges.length === 0) {
+                console.error('No pending changes to apply.');
+                return;
+            }
+            
+            applyManualChanges(pendingChanges);
+        });
+        
+        function updatePendingList() {
+            const pendingList = document.getElementById('pending-list');
+            pendingList.innerHTML = '';
+            
+            if (pendingChanges.length === 0) {
+                pendingList.innerHTML = '<p>No pending changes</p>';
+                document.getElementById('apply-changes').disabled = true;
+                return;
+            }
+            
+            const ul = document.createElement('ul');
+            pendingChanges.forEach((change, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${change.key}</strong>: EN="${change.en}", ZH="${change.zh}" <button class="remove-btn" data-index="${index}">Remove</button>`;
+                ul.appendChild(li);
+            });
+            
+            pendingList.appendChild(ul);
+            document.getElementById('apply-changes').disabled = false;
+            
+            // Add event listeners to remove buttons
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    pendingChanges.splice(index, 1);
+                    updatePendingList();
+                });
+            });
+        }
+        
+        async function applyManualChanges(changes) {
+            console.log('Applying manual changes...');
+            
+            try {
+                // Load existing locale files
+                const localeData = {};
+                for (const lang of ['en', 'zh']) {
+                    try {
+                        const response = await fetch(`locale/${lang}.json`);
+                        localeData[lang] = await response.json();
+                        console.log(`Loaded ${lang}.json successfully`);
+                    } catch (error) {
+                        console.error(`Error loading ${lang}.json:`, error);
+                        localeData[lang] = {};
+                    }
+                }
+                
+                // Create updated locale data
+                const updatedLocaleData = {
+                    en: JSON.parse(JSON.stringify(localeData.en)),
+                    zh: JSON.parse(JSON.stringify(localeData.zh))

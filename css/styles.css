@@ -86,6 +86,13 @@ body {
     font-size: 12px;
 }
 
+.bottom-nav-task {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    z-index: 10;
+}
+
 /* Toggle Switch */
 .toggle {
     position: relative;
@@ -156,4 +163,3 @@ body {
         height: 560px;
     }
 }
-

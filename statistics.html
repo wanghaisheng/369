@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="app.title">369 Manifestation Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body class="bg-purple-50">
+    <div class="iphone-frame">
+        <!-- iOS Status Bar -->
+        <div class="status-bar">
+            <div class="status-bar-time">9:41</div>
+            <div class="status-bar-icons">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+
+        <div class="app-container">
+            <header class="bg-white shadow-sm p-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-lg font-bold text-purple-700" data-i18n="statistics.title">Statistics</h1>
+                    <div class="flex items-center space-x-3">
+                        <button class="language-button text-purple-600"><i class="fas fa-globe"></i></button>
+                        <button class="text-purple-600"><i class="fas fa-share-alt"></i></button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="p-4 overflow-y-auto">
+                <!-- Summary Cards -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-gray-500" data-i18n="statistics.totalMindPower">Total Mind Power</p>
+                                <p class="text-2xl font-bold text-purple-600">7,236</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                <i class="fas fa-brain text-purple-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-gray-500" data-i18n="statistics.affirmationsWritten">Affirmations Written</p>
+                                <p class="text-2xl font-bold text-purple-600">1,845</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                <i class="fas fa-pencil-alt text-purple-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-gray-500" data-i18n="statistics.totalManifestations">Total Manifestations</p>
+                                <p class="text-2xl font-bold text-green-600">3</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-4 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-xs text-gray-500" data-i18n="statistics.manifestationRate">Manifestation Rate</p>
+                                <p class="text-2xl font-bold text-purple-600">87%</p>
+                            </div>
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
+                                <i class="fas fa-percentage text-purple-600"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Manifestation Energy Chart -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="statistics.energyDistribution">Manifestation Energy Distribution</h3>
+                    
+                    <div class="h-64 mb-2">
+                        <canvas id="energyChart"></canvas>
+                    </div>
+                    
+                    <div class="flex justify-center text-xs text-gray-500 space-x-4">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-purple-600 rounded-full mr-1"></div>
+                            <span data-i18n="statistics.career">Career</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-500 rounded-full mr-1"></div>
+                            <span data-i18n="statistics.health">Health</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-1"></div>
+                            <span data-i18n="statistics.relationships">Relationships</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-1"></div>
+                            <span data-i18n="statistics.finance">Finance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monthly Consistency Tracker -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-3">
+                        <h3 class="font-bold text-gray-800" data-i18n="statistics.monthlyConsistency">Monthly Consistency</h3>
+                        <div class="flex items-center space-x-2">
+                            <button class="text-xs bg-purple-600 text-white px-3 py-1 rounded-full">
+                                <i class="fas fa-calendar-alt mr-1"></i> <span data-i18n="statistics.april">April</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-7 gap-1 mb-4">
+                        <div class="text-center text-xs text-gray-500" data-i18n="statistics.mon">Mon</div>
+                        <div class="text-center text-xs text-gray-500" data-i18n="statistics.tue">Tue</div>
+                        <div class="text-center text-xs text-gray-500" data-i18n="statistics.wed">Wed</div>
+                        <div class="text-center text-xs text-gray-500" data-i18n="statistics.thu">Thu</div>
+                        <div class="text-center text-xs text-gray-500" data-i18n="statistics.fri">Fri</div>
+                        <div class="text-center text-xs text-gray-500" data-i18n="statistics.sat">Sat</div>
+                        <div class="text-center text-xs text-gray-500" data-i18n="statistics.sun">Sun</div>
+                        
+                        <!-- Empty spaces for beginning of month -->
+                        <div class="h-8 rounded-md"></div>
+                        <div class="h-8 rounded-md"></div>
+                        <div class="h-8 rounded-md"></div>
+                        <div class="h-8 rounded-md"></div>
+                        <div class="h-8 rounded-md"></div>
+                        
+                        <!-- Day 1-2 -->
+                        <div class="h-8 bg-green-500 rounded-md" title="April 1: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 2: Completed 100%"></div>
+                        
+                        <!-- Days 3-9 -->
+                        <div class="h-8 bg-green-500 rounded-md" title="April 3: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 4: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 5: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 6: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 7: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 8: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 9: Completed 100%"></div>
+                        
+                        <!-- Days 10-16 -->
+                        <div class="h-8 bg-green-500 rounded-md" title="April 10: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 11: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 12: Completed 100%"></div>
+                        <div class="h-8 bg-yellow-500 rounded-md" title="April 13: Completed 67%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 14: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 15: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 16: Completed 100%"></div>
+                        
+                        <!-- Days 17-23 -->
+                        <div class="h-8 bg-green-500 rounded-md" title="April 17: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 18: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 19: Completed 100%"></div>
+                        <div class="h-8 bg-yellow-500 rounded-md" title="April 20: Completed 67%"></div>
+                        <div class="h-8 bg-yellow-500 rounded-md" title="April 21: Completed 67%"></div>
+                        <div class="h-8 bg-red-500 rounded-md" title="April 22: Completed 33%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 23: Completed 100%"></div>
+                        
+                        <!-- Days 24-30 -->
+                        <div class="h-8 bg-green-500 rounded-md" title="April 24: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 25: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 26: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 27: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 28: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 29: Completed 100%"></div>
+                        <div class="h-8 bg-green-500 rounded-md" title="April 30: Completed 100%"></div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-green-500 rounded-full mr-1"></div>
+                                <span class="text-xs text-gray-600" data-i18n="statistics.completed">Completed</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full mr-1"></div>
+                                <span class="text-xs text-gray-600" data-i18n="statistics.partial">Partial</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-red-500 rounded-full mr-1"></div>
+                                <span class="text-xs text-gray-600" data-i18n="statistics.missed">Missed</span>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-600">
+                            <span class="font-medium" data-i18n="statistics.monthlyRate">Monthly Rate</span>: 93%
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time of Day Analysis -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="statistics.timeAnalysis">Time of Day Analysis</h3>
+                    
+                    <div class="h-64 mb-4">
+                        <canvas id="timeOfDayChart"></canvas>
+                    </div>
+                    
+                    <p class="text-xs text-gray-600 text-center" data-i18n="statistics.timeInsight">Your evening practice has the highest completion rate. Consider setting stronger afternoon reminders.</p>
+                </div>
+                
+                <!-- Affirmation Word Cloud -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="statistics.wordCloud">Your Affirmation Word Cloud</h3>
+                    
+                    <div class="h-56 flex items-center justify-center bg-purple-50 rounded-lg mb-3 p-4">
+                        <div class="relative w-full h-full">
+                            <span class="absolute text-4xl font-bold text-purple-700" style="top: 30%; left: 15%;">abundance</span>
+                            <span class="absolute text-xl font-medium text-purple-600" style="top: 20%; left: 50%;">health</span>
+                            <span class="absolute text-3xl font-bold text-purple-600" style="top: 60%; left: 35%;">success</span>
+                            <span class="absolute text-2xl font-medium text-purple-500" style="top: 45%; left: 60%;">career</span>
+                            <span class="absolute text-lg font-medium text-purple-400" style="top: 70%; left: 65%;">joy</span>
+                            <span class="absolute text-xl font-medium text-purple-500" style="top: 10%; left: 30%;">happiness</span>
+                            <span class="absolute text-lg font-medium text-purple-400" style="top: 50%; left: 10%;">love</span>
+                            <span class="absolute text-lg font-medium text-purple-400" style="top: 80%; left: 20%;">wealth</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xs text-gray-600 text-center" data-i18n="statistics.wordInsight">The words you focus on most reveal your manifestation priorities. "Abundance" and "Success" are your most frequent themes.</p>
+                </div>
+                
+                <!-- Manifestation Timeline -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="statistics.manifestationTimeline">Manifestation Timeline</h3>
+                    
+                    <div class="relative pb-12">
+                        <!-- Timeline Line -->
+                        <div class="absolute h-full w-0.5 bg-purple-200 left-4"></div>
+                        
+                        <!-- Timeline Events -->
+                        <div class="relative flex items-start mb-6">
+                            <div class="absolute w-9 h-9 rounded-full bg-green-500 flex items-center justify-center text-white left-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="ml-16">
+                                <h4 class="font-bold text-gray-800" data-i18n="statistics.firstManifestation">Health Improvement</h4>
+                                <p class="text-sm text-gray-600 mb-1" data-i18n="statistics.firstManifestationDate">Completed on March 15, 2023</p>
+                                <p class="text-xs text-gray-500" data-i18n="statistics.firstManifestationTime">33 days from start to manifestation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex items-start mb-6">
+                            <div class="absolute w-9 h-9 rounded-full bg-green-500 flex items-center justify-center text-white left-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="ml-16">
+                                <h4 class="font-bold text-gray-800" data-i18n="statistics.secondManifestation">Relationship Healing</h4>
+                                <p class="text-sm text-gray-600 mb-1" data-i18n="statistics.secondManifestationDate">Completed on February 20, 2023</p>
+                                <p class="text-xs text-gray-500" data-i18n="statistics.secondManifestationTime">45 days from start to manifestation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex items-start">
+                            <div class="absolute w-9 h-9 rounded-full bg-green-500 flex items-center justify-center text-white left-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="ml-16">
+                                <h4 class="font-bold text-gray-800" data-i18n="statistics.thirdManifestation">Financial Boost</h4>
+                                <p class="text-sm text-gray-600 mb-1" data-i18n="statistics.thirdManifestationDate">Completed on January 10, 2023</p>
+                                <p class="text-xs text-gray-500" data-i18n="statistics.thirdManifestationTime">38 days from start to manifestation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Insights and Recommendations -->
+                <div class="bg-purple-600 rounded-xl p-5 mb-6 text-white">
+                    <h3 class="font-bold mb-3" data-i18n="statistics.aiInsights">AI-Powered Insights</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="min-w-8 w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-3 mt-0.5">
+                                <i class="fas fa-lightbulb text-yellow-300"></i>
+                            </div>
+                            <p class="text-sm" data-i18n="statistics.insight1">Your consistency is exceptional at 93%. Most successful manifestors maintain above 85%.</p>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="min-w-8 w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-3 mt-0.5">
+                                <i class="fas fa-chart-line text-green-300"></i>
+                            </div>
+                            <p class="text-sm" data-i18n="statistics.insight2">Your afternoon practice shows a drop in consistency. Setting a lunch break reminder might help.</p>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="min-w-8 w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-3 mt-0.5">
+                                <i class="fas fa-magic text-blue-300"></i>
+                            </div>
+                            <p class="text-sm" data-i18n="statistics.insight3">Your average manifestation time is 38.7 days, which is 14% faster than the average user.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="home.html" class="bottom-nav-item">
+                    <i class="fas fa-home"></i>
+                    <span data-i18n="nav.home">Home</span>
+                </a>
+                <a href="wish_setting.html" class="bottom-nav-item">
+                    <i class="fas fa-star"></i>
+                    <span data-i18n="nav.wishes">Wishes</span>
+                </a>
+                <a href="writing_practice.html" class="bottom-nav-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <span data-i18n="nav.practice">Practice</span>
+                </a>
+                <a href="leaderboard.html" class="bottom-nav-item">
+                    <i class="fas fa-trophy"></i>
+                    <span data-i18n="nav.leaderboard">Leaderboard</span>
+                </a>
+                <a href="profile.html" class="bottom-nav-item active">
+                    <i class="fas fa-user"></i>
+                    <span data-i18n="nav.profile">Profile</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Energy Distribution Chart
+            var energyCtx = document.getElementById('energyChart').getContext('2d');
+            var energyChart = new Chart(energyCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Career', 'Health', 'Relationships', 'Finance'],
+                    datasets: [{
+                        data: [45, 25, 20, 10],
+                        backgroundColor: ['#8b5cf6', '#10b981', '#3b82f6', '#f59e0b'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + '% of energy';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Time of Day Analysis Chart
+            var timeCtx = document.getElementById('timeOfDayChart').getContext('2d');
+            var timeChart = new Chart(timeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Morning (3x)', 'Afternoon (6x)', 'Evening (9x)'],
+                    datasets: [{
+                        label: 'Completion Rate',
+                        data: [95, 82, 98],
+                        backgroundColor: ['#8b5cf6', '#8b5cf6', '#8b5cf6'],
+                        borderWidth: 0,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

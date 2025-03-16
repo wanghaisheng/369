@@ -62,6 +62,65 @@
                     <button class="w-full border border-purple-600 text-purple-600 py-2 rounded-lg font-medium" data-i18n="profile.editProfile">Edit Profile</button>
                 </div>
                 
+                <!-- Daily Tasks Management -->
+                <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="profile.dailyTasks">Daily Tasks</h3>
+                        <button class="text-purple-600"><i class="fas fa-plus"></i></button>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-grip-vertical text-gray-400 mr-3"></i>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">"I am attracting success and opportunities in my career..."</p>
+                                    <span class="text-xs text-gray-500" data-i18n="profile.method">Method</span>: <span class="text-xs font-medium" data-i18n="profile.handwriting">Handwriting</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-400"><i class="fas fa-cog"></i></button>
+                                <button class="text-gray-400"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-grip-vertical text-gray-400 mr-3"></i>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">"I am grateful for my healthy body. Every day I grow stronger..."</p>
+                                    <span class="text-xs text-gray-500" data-i18n="profile.method">Method</span>: <span class="text-xs font-medium" data-i18n="profile.typing">Typing</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-400"><i class="fas fa-cog"></i></button>
+                                <button class="text-gray-400"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-grip-vertical text-gray-400 mr-3"></i>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-800">"I attract loving, supportive relationships that nurture..."</p>
+                                    <span class="text-xs text-gray-500" data-i18n="profile.method">Method</span>: <span class="text-xs font-medium" data-i18n="profile.voice">Voice</span>
+                                </div>
+                            </div>
+                            <div class="flex space-x-2">
+                                <button class="text-gray-400"><i class="fas fa-cog"></i></button>
+                                <button class="text-gray-400"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="text-sm text-center text-gray-600">
+                            <span data-i18n="profile.taskCount">Task Count</span>: 3/3
+                            <span class="text-purple-600 ml-2" data-i18n="profile.upgrade">Upgrade</span> <span data-i18n="profile.forUnlimited">for unlimited</span>
+                        </p>
+                    </div>
+                </div>
+                
                 <!-- App Settings -->
                 <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
                     <h3 class="font-bold text-gray-800 mb-4" data-i18n="profile.appSettings">App Settings</h3>
@@ -101,8 +160,13 @@
                                 <span class="text-gray-800" data-i18n="profile.language">Language</span>
                             </div>
                             <div class="flex items-center space-x-1">
-                                <span class="text-sm text-gray-600">English</span>
-                                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                <select id="language-selector" class="bg-gray-100 text-gray-800 px-2 py-1 rounded">
+                                    <option value="en">English</option>
+                                    <option value="zh">中文</option>
+                                    <option value="ja">日本語</option>
+                                    <option value="es">Español</option>
+                                </select>
+                                <i class="fas fa-chevron-right text-gray-400 text-xs ml-2"></i>
                             </div>
                         </div>
                         
@@ -207,6 +271,12 @@
                 <button class="w-full py-3 text-red-500 font-medium mb-6" data-i18n="profile.signOut">Sign Out</button>
             </div>
 
+            <div class="bottom-nav-task">
+                <button class="practice-task-btn bg-purple-600 text-white h-12 w-12 rounded-full shadow-lg flex items-center justify-center">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+            </div>
+
             <!-- Bottom Navigation -->
             <nav class="bottom-nav">
                 <a href="home.html" class="bottom-nav-item">
@@ -217,13 +287,13 @@
                     <i class="fas fa-star"></i>
                     <span data-i18n="nav.wishes">Wishes</span>
                 </a>
-                <a href="writing_practice.html" class="bottom-nav-item">
-                    <i class="fas fa-pencil-alt"></i>
-                    <span data-i18n="nav.practice">Practice</span>
+                <a href="progress.html" class="bottom-nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span data-i18n="nav.progress">Progress</span>
                 </a>
-                <a href="community.html" class="bottom-nav-item">
-                    <i class="fas fa-users"></i>
-                    <span data-i18n="nav.community">Community</span>
+                <a href="leaderboard.html" class="bottom-nav-item">
+                    <i class="fas fa-trophy"></i>
+                    <span data-i18n="nav.leaderboard">Leaderboard</span>
                 </a>
                 <a href="profile.html" class="bottom-nav-item active">
                     <i class="fas fa-user"></i>
@@ -233,7 +303,33 @@
         </div>
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Task button leads to writing practice
+            const taskBtn = document.querySelector('.practice-task-btn');
+            if (taskBtn) {
+                taskBtn.addEventListener('click', function() {
+                    window.location.href = 'writing_practice.html';
+                });
+            }
+
+            // Language selector functionality
+            const languageSelector = document.getElementById('language-selector');
+            if (languageSelector) {
+                // Set the current language
+                const currentLang = localStorage.getItem('language') || 'en';
+                languageSelector.value = currentLang;
+                
+                // Add change event listener
+                languageSelector.addEventListener('change', function() {
+                    const newLang = this.value;
+                    localStorage.setItem('language', newLang);
+                    loadLanguage(newLang);
+                });
+            }
+        });
+    </script>
+
     <script src="js/i18n.js"></script>
 </body>
 </html>
-

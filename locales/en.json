@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "369 Manifestation Method",
+    "title": "Manifest 369 to go",
     "demoButton": "Open Full App Demo"
   },
   "landing": {
@@ -33,14 +33,16 @@
     "profile": "Profile"
   },
   "footer": {
-    "copyright": "© 2023 All Rights Reserved"
+    "copyright": " 2023 All Rights Reserved"
   },
   "nav": {
     "home": "Home",
     "wishes": "Wishes",
     "practice": "Practice",
     "community": "Community",
-    "profile": "Profile"
+    "profile": "Profile",
+    "leaderboard": "Leaderboard",
+    "progress": "Progress"
   },
   "home": {
     "title": "Dashboard",
@@ -93,7 +95,26 @@
     "completed": "Completed",
     "days": "days",
     "practice": "Practice",
-    "viewResults": "View Results"
+    "viewResults": "View Results",
+    "communityAffirmations": "Community Affirmations",
+    "viewMore": "View More",
+    "addToDaily": "Add to Daily",
+    "affirmationSettings": "Affirmation Settings",
+    "reminderTimes": "Reminder Times",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "completionMethods": "Completion Methods",
+    "handwriting": "Handwriting",
+    "typing": "Typing",
+    "voice": "Voice",
+    "dailyLimit": "Daily Task Limit",
+    "freeLimit": "Free User Limit",
+    "tasks": "tasks",
+    "upgrade": "Upgrade",
+    "earnMore": "Earn More Tasks",
+    "watchAd": "Watch Ad",
+    "premiumRequired": "Premium access required"
   },
   "practice": {
     "title": "Writing Practice",
@@ -139,7 +160,8 @@
     "week1": "1 Week",
     "week2": "2 Weeks",
     "month1": "1 Month",
-    "complete45": "Complete 45"
+    "complete45": "Complete 45",
+    "advancedStats": "Advanced Stats"
   },
   "community": {
     "title": "Community",
@@ -189,7 +211,172 @@
     "rateApp": "Rate the App",
     "sendFeedback": "Send Feedback",
     "inviteFriends": "Invite Friends",
-    "signOut": "Sign Out"
+    "signOut": "Sign Out",
+    "dailyTasks": "Daily Tasks",
+    "method": "Method",
+    "handwriting": "Handwriting",
+    "typing": "Typing",
+    "voice": "Voice",
+    "taskCount": "Task Count",
+    "upgrade": "Upgrade",
+    "forUnlimited": "for unlimited"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "yourPoints": "Your Points",
+    "earnPoints": "Like entries to earn more points!",
+    "redeem": "Redeem",
+    "thisWeek": "This Week",
+    "allTime": "All Time",
+    "successStories": "Success Stories",
+    "trending": "Trending",
+    "top3": "Top 3 Manifestors",
+    "otherEntries": "Other Top Manifestors",
+    "likeToEarn": "Like to earn 10 points",
+    "likeToEarn3": "Like to earn 3 points",
+    "likeToEarn2": "Like to earn 2 points",
+    "redeemPoints": "Redeem Your Points",
+    "pointsExplainer": "Your points can be redeemed for premium membership trial cards and other benefits.",
+    "7dayTrial": "7-Day Premium Trial",
+    "7dayDesc": "Unlock all premium features for a week",
+    "30dayTrial": "30-Day Premium Trial",
+    "30dayDesc": "A full month of premium access",
+    "customAffirmation": "Custom Affirmation Pack",
+    "customDesc": "5 personalized affirmations created for you"
+  },
+  "onboarding": {
+    "slide1": {
+      "title": "Welcome to 369 Manifestation",
+      "text": "Transform your reality with the power of numbers and consistent practice."
+    },
+    "slide2": {
+      "morning": "Morning Ritual",
+      "morningText": "Write your affirmation 3 times in the morning to plant the seed in your subconscious.",
+      "afternoon": "Afternoon Power",
+      "afternoonText": "Write your affirmation 6 times in the afternoon to nurture your intention.",
+      "evening": "Evening Amplification",
+      "eveningText": "Write your affirmation 9 times before bed to amplify your manifestation."
+    },
+    "slide3": {
+      "title": "Track Your Progress",
+      "text": "Watch your manifestation journey unfold with detailed analytics and insights.",
+      "daysRemaining": "days remaining"
+    },
+    "slide4": {
+      "title": "You're Not Alone",
+      "text": "Connect with thousands of manifestors on the same journey and share your success.",
+      "join": "Join Our Community"
+    },
+    "skip": "Skip",
+    "next": "Next",
+    "getStarted": "Get Started"
+  },
+  "paywall": {
+    "title": "Unlock Your Full Potential",
+    "subtitle": "Choose the perfect plan to accelerate your manifestation journey",
+    "feature1": "Unlimited affirmations & wishes",
+    "feature2": "Advanced progress tracking",
+    "feature3": "AI-powered affirmation generator",
+    "feature4": "Full community participation",
+    "feature5": "No ads, pure manifestation experience",
+    "monthly": {
+      "title": "Monthly",
+      "subtitle": "Perfect to start your journey",
+      "period": "per month"
+    },
+    "annual": {
+      "title": "Annual",
+      "subtitle": "Save 50% with annual billing",
+      "period": "per year"
+    },
+    "lifetime": {
+      "title": "Lifetime",
+      "subtitle": "One-time payment",
+      "period": "pay once"
+    },
+    "bestValue": "BEST VALUE",
+    "startTrial": "Start 7-Day Free Trial",
+    "selectMonthly": "Start 7-Day Free Trial",
+    "selectAnnual": "Select Annual Plan",
+    "selectLifetime": "Get Lifetime Access",
+    "guarantee": "30-day money-back guarantee, no questions asked.",
+    "testimonial": "The premium features helped me manifest my dream job in just 33 days! The tracking tools made all the difference in staying consistent.",
+    "testimonialName": "— Emily Johnson",
+    "terms": "By continuing, you agree to our Terms of Service and Privacy Policy.",
+    "continueFree": "Continue with limited free version"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "totalMindPower": "Total Mind Power",
+    "affirmationsWritten": "Affirmations Written",
+    "totalManifestations": "Total Manifestations",
+    "manifestationRate": "Manifestation Rate",
+    "energyDistribution": "Manifestation Energy Distribution",
+    "career": "Career",
+    "health": "Health",
+    "relationships": "Relationships",
+    "finance": "Finance",
+    "monthlyConsistency": "Monthly Consistency",
+    "april": "April",
+    "mon": "Mon",
+    "tue": "Tue",
+    "wed": "Wed",
+    "thu": "Thu",
+    "fri": "Fri",
+    "sat": "Sat",
+    "sun": "Sun",
+    "completed": "Completed",
+    "partial": "Partial",
+    "missed": "Missed",
+    "monthlyRate": "Monthly Rate",
+    "timeAnalysis": "Time of Day Analysis",
+    "timeInsight": "Your evening practice has the highest completion rate. Consider setting stronger afternoon reminders.",
+    "wordCloud": "Your Affirmation Word Cloud",
+    "wordInsight": "The words you focus on most reveal your manifestation priorities. \"Abundance\" and \"Success\" are your most frequent themes.",
+    "manifestationTimeline": "Manifestation Timeline",
+    "firstManifestation": "Health Improvement",
+    "firstManifestationDate": "Completed on March 15, 2023",
+    "firstManifestationTime": "33 days from start to manifestation",
+    "secondManifestation": "Relationship Healing",
+    "secondManifestationDate": "Completed on February 20, 2023",
+    "secondManifestationTime": "45 days from start to manifestation",
+    "thirdManifestation": "Financial Boost",
+    "thirdManifestationDate": "Completed on January 10, 2023",
+    "thirdManifestationTime": "38 days from start to manifestation",
+    "aiInsights": "AI-Powered Insights",
+    "insight1": "Your consistency is exceptional at 93%. Most successful manifestors maintain above 85%.",
+    "insight2": "Your afternoon practice shows a drop in consistency. Setting a lunch break reminder might help.",
+    "insight3": "Your average manifestation time is 38.7 days, which is 14% faster than the average user."
+  },
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Sign in to continue your manifestation journey",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "orSignInWith": "Or sign in with",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "register": {
+    "title": "Start Your Journey",
+    "subtitle": "Create an account to begin manifesting your dreams",
+    "name": "Full Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Create a password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "terms": "I agree to the Terms of Service and Privacy Policy",
+    "signUp": "Sign Up",
+    "orSignUpWith": "Or sign up with",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign In"
   }
 }
-

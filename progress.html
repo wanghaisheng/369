@@ -35,7 +35,13 @@
             <div class="p-4 overflow-y-auto">
                 <!-- Overall Progress -->
                 <div class="bg-white rounded-xl p-5 mb-6 shadow-sm">
-                    <h3 class="font-bold text-gray-800 mb-3" data-i18n="progress.overallProgress">Overall Progress</h3>
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-800" data-i18n="progress.overallProgress">Overall Progress</h3>
+                        <a href="statistics.html" class="text-xs text-purple-600">
+                            <i class="fas fa-chart-bar mr-1"></i>
+                            <span data-i18n="progress.advancedStats">Advanced Stats</span>
+                        </a>
+                    </div>
                     
                     <div class="flex justify-between items-center mb-4">
                         <div>
@@ -231,25 +237,40 @@
                     <i class="fas fa-star"></i>
                     <span data-i18n="nav.wishes">Wishes</span>
                 </a>
-                <a href="writing_practice.html" class="bottom-nav-item">
-                    <i class="fas fa-pencil-alt"></i>
-                    <span data-i18n="nav.practice">Practice</span>
+                <a href="progress.html" class="bottom-nav-item active">
+                    <i class="fas fa-chart-line"></i>
+                    <span data-i18n="nav.progress">Progress</span>
                 </a>
-                <a href="community.html" class="bottom-nav-item">
-                    <i class="fas fa-users"></i>
-                    <span data-i18n="nav.community">Community</span>
+                <a href="leaderboard.html" class="bottom-nav-item">
+                    <i class="fas fa-trophy"></i>
+                    <span data-i18n="nav.leaderboard">Leaderboard</span>
                 </a>
-                <a href="profile.html" class="bottom-nav-item active">
+                <a href="profile.html" class="bottom-nav-item">
                     <i class="fas fa-user"></i>
                     <span data-i18n="nav.profile">Profile</span>
                 </a>
             </nav>
+
+            <!-- Task Button Above Home -->
+            <div class="bottom-nav-task">
+                <button class="practice-task-btn bg-purple-600 text-white h-12 w-12 rounded-full shadow-lg flex items-center justify-center">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+            </div>
         </div>
     </div>
 
     <script src="js/i18n.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Task button leads to writing practice
+            const taskBtn = document.querySelector('.practice-task-btn');
+            if (taskBtn) {
+                taskBtn.addEventListener('click', function() {
+                    window.location.href = 'writing_practice.html';
+                });
+            }
+
             var ctx = document.getElementById('progressChart').getContext('2d');
             var chart = new Chart(ctx, {
                 type: 'line',
@@ -288,4 +309,3 @@
     </script>
 </body>
 </html>
-
