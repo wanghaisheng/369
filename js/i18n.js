@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadLanguage(lang) {
-    fetch(`locale/${lang}.json`)
+    fetch(`locales/${lang}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to load locale file');
@@ -127,21 +127,6 @@ function loadLanguage(lang) {
         })
         .catch(error => {
             console.error('Error loading language file:', error);
-            // Try alternate path if first attempt fails
-            fetch(`locales/${lang}.json`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to load locale file from alternate path');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    window.currentLangData = data;
-                    updateContent(data);
-                })
-                .catch(err => {
-                    console.error('Error loading language file from alternate path:', err);
-                });
         });
 }
 

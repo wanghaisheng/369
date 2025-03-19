@@ -11,7 +11,7 @@
 
 // Configuration
 const config = {
-  localeDir: 'locale',
+  localeDir: 'locales',
   supportedLanguages: ['en', 'zh'],
   defaultLanguage: 'en',
   attributeSelectors: ['data-i18n', 'data-i18n-placeholder', 'data-i18n-content', 'data-i18n-alt', 'data-i18n-title']

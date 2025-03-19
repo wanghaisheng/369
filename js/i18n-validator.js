@@ -7,13 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load all language JSON files
     Promise.all(
         availableLanguages.map(lang => 
-            fetch(`locale/${lang}.json`)
-                .then(response => {
-                    if (!response.ok) {
-                        return fetch(`locales/${lang}.json`);
-                    }
-                    return response;
-                })
+            fetch(`locales/${lang}.json`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Failed to load ${lang} locale file`);

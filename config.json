@@ -1,4 +1,5 @@
 {
   "baseUrl": "https://369.heymanifestation.com",
-  "defaultLang": "en"
+  "defaultLang": "en",
+  "languages": ["en", "zh", "ja", "es"]
 }

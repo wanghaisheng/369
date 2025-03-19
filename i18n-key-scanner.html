@@ -133,7 +133,7 @@
             <li>A report will be generated showing missing keys and which files use them.</li>
             <li>If missing keys are found, updated JSON files will be available for download.</li>
         </ol>
-        <p><strong>Note:</strong> By default, the scanner will look for HTML files in the same directory as this tool and locale files in the "locale" subfolder.</p>
+        <p><strong>Note:</strong> By default, the scanner will look for HTML files in the same directory as this tool and locale files in the "locales" subfolder.</p>
     </div>
 
     <div class="config-section">
@@ -145,7 +145,7 @@
         </div>
         <div class="form-group">
             <label for="locale-path">Locale Files Path:</label>
-            <input type="text" id="locale-path" placeholder="Path to locale files" value="./locale">
+            <input type="text" id="locale-path" placeholder="Path to locale files" value="./locales">
             <button id="browse-locale-path">Browse</button>
         </div>
         <div class="form-group">
@@ -293,7 +293,7 @@
                     if (isLocaleFile) {
                         // Extract the directory path
                         const fullPath = file.webkitRelativePath || file.name;
-                        let dirPath = './locale';
+                        let dirPath = './locales';
                         
                         if (fullPath.includes('/')) {
                             const pathParts = fullPath.split('/');

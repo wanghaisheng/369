@@ -12,7 +12,7 @@
 
 // Configuration
 const config = {
-  localeDir: 'locale',
+  localeDir: 'locales',
   supportedLanguages: ['en', 'zh'],
   defaultLanguage: 'en',
   attributeSelectors: ['data-i18n', 'data-i18n-placeholder', 'data-i18n-content', 'data-i18n-alt', 'data-i18n-title'],
@@ -395,4 +395,175 @@ function setNestedProperty(obj, path, value) {
   const parts = path.split('.');
   let current = obj;
   
-  for (let i = 0; i < parts
+  for (let i = 0; i < parts.length - 1; i++) {
+    const part = parts[i];
+    if (!current[part]) {
+      current[part] = {};
+    }
+    current = current[part];
+  }
+  
+  current[parts[parts.length - 1]] = value;
+  return obj;
+}
+
+// Display report of missing keys
+function displayReport(missingKeys, localeData, fileKeysMap, mergedConfig) {
+  console.log('\n=== Missing Keys Report ===');
+  
+  // Display missing keys by language
+  for (const lang of mergedConfig.supportedLanguages) {
+    console.log(`\n${lang.toUpperCase()} Missing Keys (${missingKeys[lang].length}):`);
+    if (missingKeys[lang].length === 0) {
+      console.log('No missing keys!');
+    } else {
+      missingKeys[lang].forEach(key => {
+        // For non-default language, show the default language value as reference
+        if (lang !== mergedConfig.defaultLanguage) {
+          const defaultValue = getNestedProperty(localeData[mergedConfig.defaultLanguage], key);
+          console.log(`${key}: ${defaultValue || '[No default value]'}`);
+        } else {
+          console.log(key);
+        }
+        
+        // Show which files use this key
+        const filesUsingKey = Object.entries(fileKeysMap)
+          .filter(([_, keys]) => keys.includes(key))
+          .map(([file, _]) => file);
+        
+        if (filesUsingKey.length > 0) {
+          console.log(`  Used in: ${filesUsingKey.join(', ')}`);
+        }
+      });
+    }
+  }
+  
+  // Display keys by file
+  console.log('\n=== Keys by File ===');
+  for (const [file, keys] of Object.entries(fileKeysMap)) {
+    console.log(`\n${file} (${keys.length} keys):`);
+    console.log(keys.join('\n'));
+  }
+}
+
+// Generate updated locale data with missing keys
+function generateUpdatedLocaleData(missingKeys, localeData, mergedConfig) {
+  const updatedLocaleData = {};
+  
+  // Deep clone existing locale data
+  for (const lang of mergedConfig.supportedLanguages) {
+    updatedLocaleData[lang] = JSON.parse(JSON.stringify(localeData[lang]));
+  }
+  
+  // Add missing keys
+  for (const lang of mergedConfig.supportedLanguages) {
+    for (const key of missingKeys[lang]) {
+      let value = '';
+      
+      // For non-default language, use default language value as placeholder
+      if (lang !== mergedConfig.defaultLanguage) {
+        const defaultValue = getNestedProperty(localeData[mergedConfig.defaultLanguage], key);
+        if (defaultValue) {
+          value = `[TRANSLATE] ${defaultValue}`;
+        } else {
+          value = '[MISSING]';
+        }
+      } else {
+        value = '[MISSING]';
+      }
+      
+      setNestedProperty(updatedLocaleData[lang], key, value);
+    }
+  }
+  
+  return updatedLocaleData;
+}
+
+// Create and download updated locale files
+function downloadUpdatedLocaleFiles(updatedLocaleData, mergedConfig) {
+  console.log('\n=== Updated Locale Files ===');
+  
+  // Clear previous download container
+  const downloadContainer = document.getElementById('download-container');
+  if (downloadContainer) {
+    downloadContainer.innerHTML = '';
+    
+    // Add heading
+    const heading = document.createElement('h2');
+    heading.textContent = 'Updated Locale Files';
+    downloadContainer.appendChild(heading);
+    
+    // Add description
+    const description = document.createElement('p');
+    description.textContent = 'The following files have been updated with missing keys. Click the download links to save them.';
+    downloadContainer.appendChild(description);
+  }
+  
+  for (const lang of mergedConfig.supportedLanguages) {
+    try {
+      const jsonString = JSON.stringify(updatedLocaleData[lang], null, 2);
+      
+      // Create a download link
+      const blob = new Blob([jsonString], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${lang}_updated.json`;
+      a.textContent = `Download updated ${lang}.json`;
+      a.style.display = 'block';
+      a.style.margin = '10px 0';
+      a.className = 'download-link';
+      
+      // Add to the page if download container exists
+      if (downloadContainer) {
+        const container = document.createElement('div');
+        container.className = 'locale-file-container';
+        
+        const fileHeading = document.createElement('h3');
+        fileHeading.textContent = `Updated ${lang}.json`;
+        container.appendChild(fileHeading);
+        
+        // Add stats about missing keys
+        const stats = document.createElement('p');
+        const missingCount = Object.keys(updatedLocaleData[lang]).filter(key => 
+          updatedLocaleData[lang][key] === '[MISSING]' || 
+          updatedLocaleData[lang][key].startsWith('[TRANSLATE]')
+        ).length;
+        stats.textContent = `Contains ${missingCount} missing or untranslated keys`;
+        container.appendChild(stats);
+        
+        const pre = document.createElement('pre');
+        pre.className = 'json-preview';
+        pre.textContent = jsonString;
+        container.appendChild(pre);
+        
+        container.appendChild(a);
+        downloadContainer.appendChild(container);
+      } else {
+        // If no download container, just trigger download
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+      
+      console.log(`Created download link for updated ${lang}.json`);
+    } catch (error) {
+      console.error(`Error creating download for ${lang}.json:`, error);
+    }
+  }
+}
+
+// Clear results function
+function clearResults() {
+  const logOutput = document.getElementById('log-output');
+  const downloadContainer = document.getElementById('download-container');
+  
+  if (logOutput) logOutput.innerHTML = '';
+  if (downloadContainer) downloadContainer.innerHTML = '';
+  
+  console.log('Results cleared');
+}
+
+// Export functions for use in the UI
+window.runScanner = runScanner;
+window.clearResults = clearResults;

@@ -10,7 +10,7 @@
 
 // Configuration
 const config = {
-  localeDir: 'locale',
+  localeDir: 'locales',
   supportedLanguages: ['en', 'zh'],
   defaultLanguage: 'en',
   backupFiles: true // Create backups before overwriting
